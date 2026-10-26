@@ -1,0 +1,49 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
+MERA constraints on the dhvm: left 
+The model has districts (unobserved variables marked with [u]:
+     {V1} with c-degree 0, {V2, V4, U2[u]} with c-degree 1, {V3} with c-degree 0 
+The canonical partitioned model is available in x$dhvm_partitioned
+
+Constraints:
+------------
+* Conditional independence relations:
+V1 ⟂ V3 | V2 
+* Equality and inequality constraints by district:
+There are 8 possibly nontrivial constraints involving V2_V4, 4 inequalities and 4 equalities.
+The first 4 expressions are
+-P(V2 = 0|V1 = 1)P(V4 = 0|V2 = 0,V1 = 1,V3 = 0) - P(V2 = 0|V ...[truncated]
+-P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0) - P(V2 = 0|V ...[truncated]
+P(V2 = 0|V1 = 1)P(V4 = 0|V2 = 0,V1 = 1,V3 = 0) + P(V2 = 0|V1 ...[truncated]
+P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0) + P(V2 = 0|V1 ...[truncated]
+There are 0 possibly nontrivial constraints involving V3, 0 inequalities and 0 equalities.
+MERA constraints on the dhvm: right 
+The model has districts (unobserved variables marked with [u]:
+     {V1} with c-degree 0, {V2, V4, U2[u]} with c-degree 1, {V3} with c-degree 0 
+The canonical partitioned model is available in x$dhvm_partitioned
+
+Constraints:
+------------
+* Conditional independence relations:
+V1 ⟂ V3 | V2 
+* Equality and inequality constraints by district:
+There are 16 possibly nontrivial constraints involving V2_V4, 12 inequalities and 4 equalities.
+The first 4 expressions are
+-P(V2 = 0|V1 = 1)P(V4 = 0|V2 = 0,V1 = 1,V3 = 0) - P(V2 = 0|V ...[truncated]
+P(V2 = 1|V1 = 0)P(V4 = 0|V2 = 1,V1 = 0,V3 = 0) - P(V2 = 0|V1 ...[truncated]
+-P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0) - P(V2 = 0|V ...[truncated]
+-P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0) - P(V2 = 1|V ...[truncated]
+There are 0 possibly nontrivial constraints involving V3, 0 inequalities and 0 equalities.
+
+Constraints of the left graph ever violated by samples from the left graph: 0 
+Constraints of the right graph violated by samples from the left graph: 8 
+
+==== Those constraints of the right graph, in terms of interventional probabilities ====
+-P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) + P*(V2 = 1,V4 = 0|V1 = 0,V3 = 1) - P*(V2 = 1,V4 = 0|V1 = 1,V3 = 1) <= 0
+P*(V2 = 1,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) - P*(V2 = 1,V4 = 0|V1 = 1,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) <= 0
+-P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) - P*(V2 = 1,V4 = 0|V1 = 0,V3 = 1) + P*(V2 = 1,V4 = 0|V1 = 1,V3 = 1) <= 0
+-P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 1,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) + P*(V2 = 1,V4 = 0|V1 = 1,V3 = 0) <= 0
+P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) + P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) <= 1
+P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) + P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) <= 1
+P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) + P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 0|V1 = 0,V3 = 1) + P*(V2 = 0,V4 = 0|V1 = 1,V3 = 1) <= 1
+P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) + P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) + P*(V2 = 0,V4 = 0|V1 = 0,V3 = 1) - P*(V2 = 0,V4 = 0|V1 = 1,V3 = 1) <= 1

@@ -1,0 +1,70 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
+MERA constraints on the dhvm: iv 
+The model has districts (unobserved variables marked with [u]:
+     {Z} with c-degree 0, {X, Y, U[u]} with c-degree 1 
+The canonical partitioned model is available in x$dhvm_partitioned
+
+Constraints:
+------------
+There are no conditional independence relations.
+* Equality and inequality constraints by district:
+There are 4 possibly nontrivial constraints involving X_Y, 4 inequalities and 0 equalities.
+The first 4 expressions are
+-P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) - P(X = 1|Z = 0)P(Y = 0| ...[truncated]
+P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) - P(X = 0|Z = 1)P(Y = 0|X ...[truncated]
+P(X = 0|Z = 0)P(Y = 1|X = 0,Z = 0) + P(X = 0|Z = 1)P(Y = 0|X ...[truncated]
+P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) + P(X = 0|Z = 1)P(Y = 1|X ...[truncated]
+
+==== Matrix B (rows: P*(x, y | z); columns: response function variable values) ====
+     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+[1,]    1    1    1    0    0    0    0    0    0     0     0     0
+[2,]    0    0    0    1    1    1    0    0    0     0     0     0
+[3,]    0    0    0    0    0    0    1    1    1     0     0     0
+[4,]    0    0    0    0    0    0    0    0    0     1     1     1
+[5,]    1    0    0    1    0    0    0    0    0     1     0     0
+[6,]    0    1    0    0    1    0    0    1    0     0     0     0
+[7,]    0    0    0    0    0    1    1    0    0     0     0     1
+[8,]    0    0    1    0    0    0    0    0    1     0     1     0
+
+==== H-representation (rcdd format: columns are [equality flag, b, -A]) ====
+      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+ [1,]    0    0    0    0    0    0    1    0    0     0
+ [2,]    0    0    1    1    1    0    0   -1    0     0
+ [3,]    0    0    0   -1    0    0    1    1    1     0
+ [4,]    0    0    1    0    0    0    0    0    0     0
+ [5,]    0    1    0    0   -1    0   -1    0    0     0
+ [6,]    0    1   -1    0    0    0    0    0   -1     0
+ [7,]    0    0    0    0    0    0    0    1    0     0
+ [8,]    0    1    0    0    0    0   -1   -1   -1     0
+ [9,]    0    0    0    1    0    0    0    0    0     0
+[10,]    0    1   -1   -1   -1    0    0    0    0     0
+[11,]    0    0    0    0    0    0    0    0    1     0
+[12,]    0    0    0    0    1    0    0    0    0     0
+[13,]    1   -1    1    1    1    1    0    0    0     0
+[14,]    1   -1    0    0    0    0    1    1    1     1
+attr(,"representation")
+[1] "H"
+
+==== All constraints, in terms of observed probabilities ====
+-P(X = 0|Z = 1)P(Y = 0|X = 0,Z = 1) <= 0
+-P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) - P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) - P(X = 0|Z = 0)P(Y = 1|X = 0,Z = 0) + P(X = 1|Z = 1)P(Y = 0|X = 1,Z = 1) <= 0
+P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) - P(X = 0|Z = 1)P(Y = 0|X = 0,Z = 1) - P(X = 1|Z = 1)P(Y = 0|X = 1,Z = 1) - P(X = 0|Z = 1)P(Y = 1|X = 0,Z = 1) <= 0
+-P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) <= 0
+P(X = 0|Z = 0)P(Y = 1|X = 0,Z = 0) + P(X = 0|Z = 1)P(Y = 0|X = 0,Z = 1) <= 1
+P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) + P(X = 0|Z = 1)P(Y = 1|X = 0,Z = 1) <= 1
+-P(X = 1|Z = 1)P(Y = 0|X = 1,Z = 1) <= 0
+P(X = 0|Z = 1)P(Y = 0|X = 0,Z = 1) + P(X = 1|Z = 1)P(Y = 0|X = 1,Z = 1) + P(X = 0|Z = 1)P(Y = 1|X = 0,Z = 1) <= 1
+-P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) <= 0
+P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) + P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) + P(X = 0|Z = 0)P(Y = 1|X = 0,Z = 0) <= 1
+-P(X = 0|Z = 1)P(Y = 1|X = 0,Z = 1) <= 0
+-P(X = 0|Z = 0)P(Y = 1|X = 0,Z = 0) <= 0
+-P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) - P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) - P(X = 0|Z = 0)P(Y = 1|X = 0,Z = 0) - P(X = 1|Z = 0)P(Y = 1|X = 1,Z = 0)  =  -1
+-P(X = 0|Z = 1)P(Y = 0|X = 0,Z = 1) - P(X = 1|Z = 1)P(Y = 0|X = 1,Z = 1) - P(X = 0|Z = 1)P(Y = 1|X = 0,Z = 1) - P(X = 1|Z = 1)P(Y = 1|X = 1,Z = 1)  =  -1
+
+==== Rows flagged as potentially nontrivial (Proposition 4) ====
+[1] 2 3 5 6
+-P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) - P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) - P(X = 0|Z = 0)P(Y = 1|X = 0,Z = 0) + P(X = 1|Z = 1)P(Y = 0|X = 1,Z = 1) <= 0
+P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) - P(X = 0|Z = 1)P(Y = 0|X = 0,Z = 1) - P(X = 1|Z = 1)P(Y = 0|X = 1,Z = 1) - P(X = 0|Z = 1)P(Y = 1|X = 0,Z = 1) <= 0
+P(X = 0|Z = 0)P(Y = 1|X = 0,Z = 0) + P(X = 0|Z = 1)P(Y = 0|X = 0,Z = 1) <= 1
+P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) + P(X = 0|Z = 1)P(Y = 1|X = 0,Z = 1) <= 1

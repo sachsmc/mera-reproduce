@@ -1,0 +1,57 @@
+## Closed-form screening for potentially nontrivial constraints (Proposition 4, revised).
+## Drop-in replacement for meraconstraints::prob_simplex_extremes().
+## Rather than listing all prod_b n_b extreme points of the product of simplices,
+## each row's maximum (and minimum) over the product of simplices is computed as the
+## sum of blockwise maxima (minima) of its coefficients.
+##
+## rcdd H-representation: columns are (eq flag, b, -A), encoding b - A p >= 0
+## (or = 0 when the flag is 1), i.e. A p <= b.
+
+prob_simplex_screen <- function(drels, hreps, tol = 1e-8) {
+
+  checks <- vector(mode = "list", length = length(hreps))
+  for (i in seq_along(hreps)) {
+
+    hrep <- hreps[[i]]
+
+    if (length(drels$district_parms$poterms[[i]]$do) == 0) {
+      checks[[i]] <- rep(FALSE, nrow(hrep))
+      next
+    }
+    ctabin <- split(drels$problevels[[i]],
+                    drels$problevels[[i]][, drels$district_parms$poterms[[i]]$do])
+    blocks <- lapply(ctabin, \(cin) do.call(paste, c(as.list(cin), sep = ".")))
+    pnames <- names(unlist(drels$probform[[i]]))
+    blockidx <- lapply(blocks, match, pnames)
+
+    A  <- -hrep[, -(1:2), drop = FALSE]
+    b  <- hrep[, 2]
+    eq <- hrep[, 1] == 1
+
+    blockmax <- do.call(cbind, lapply(blockidx, \(ix) apply(A[, ix, drop = FALSE], 1, max)))
+    blockmin <- do.call(cbind, lapply(blockidx, \(ix) apply(A[, ix, drop = FALSE], 1, min)))
+    hi <- rowSums(blockmax)
+    lo <- rowSums(blockmin)
+
+    checks[[i]] <- ifelse(eq,
+                          abs(hi - b) > tol | abs(lo - b) > tol,  # equality violated somewhere
+                          hi > b + tol)                           # inequality violated somewhere
+  }
+  checks
+}
+
+## Sanity check against the version that lists all extreme points on the paper's examples:
+if (FALSE) {
+  library(meraconstraints)
+  ex <- list(
+    iv  = caugi(Z %-->% X, X %-->% Y, U %-->% X + Y) |> dhvm(),
+    fd  = caugi(A %-->% M %-->% Y, U1 %-->% A + Y) |> dhvm(),
+    r2  = caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4) |> dhvm()
+  )
+  for (g in ex) {
+    rel <- dhvm_linear_relations(g)
+    H   <- dhvm_relations_to_polytope(rel)$Hrep
+    stopifnot(identical(unname(prob_simplex_extremes(rel, H)),
+                        unname(prob_simplex_screen(rel, H))))
+  }
+}

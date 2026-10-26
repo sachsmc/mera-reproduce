@@ -1,0 +1,70 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
+MERA constraints on the dhvm: sq 
+The model has districts (unobserved variables marked with [u]:
+     {V1} with c-degree 0, {V2, V3, U1[u]} with c-degree 1, {V4, V5, U2[u]} with c-degree 1 
+The canonical partitioned model is available in x$dhvm_partitioned
+
+Constraints:
+------------
+* Conditional independence relations:
+V1 ⟂ V4 | V3, V1 ⟂ V5 | V3, V2 ⟂ V4 | V3, V2 ⟂ V5 | V3 
+* Equality and inequality constraints by district:
+There are 4 possibly nontrivial constraints involving V2_V3, 4 inequalities and 0 equalities.
+The first 4 expressions are
+-P(V2 = 0|V1 = 0)P(V3 = 0|V2 = 0,V1 = 0) - P(V2 = 1|V1 = 0)P ...[truncated]
+P(V2 = 1|V1 = 0)P(V3 = 0|V2 = 1,V1 = 0) - P(V2 = 0|V1 = 1)P( ...[truncated]
+P(V2 = 0|V1 = 0)P(V3 = 1|V2 = 0,V1 = 0) + P(V2 = 0|V1 = 1)P( ...[truncated]
+P(V2 = 0|V1 = 0)P(V3 = 0|V2 = 0,V1 = 0) + P(V2 = 0|V1 = 1)P( ...[truncated]
+There are 4 possibly nontrivial constraints involving V4_V5, 4 inequalities and 0 equalities.
+The first 4 expressions are
+-P(V4 = 0|V3 = 0)P(V5 = 0|V4 = 0,V3 = 0) - P(V4 = 1|V3 = 0)P ...[truncated]
+P(V4 = 1|V3 = 0)P(V5 = 0|V4 = 1,V3 = 0) - P(V4 = 0|V3 = 1)P( ...[truncated]
+P(V4 = 0|V3 = 0)P(V5 = 1|V4 = 0,V3 = 0) + P(V4 = 0|V3 = 1)P( ...[truncated]
+P(V4 = 0|V3 = 0)P(V5 = 0|V4 = 0,V3 = 0) + P(V4 = 0|V3 = 1)P( ...[truncated]
+
+==== Conditional independencies ====
+[[1]]
+[[1]]$indep
+[1] "V1" "V4"
+
+[[1]]$given
+[1] "V3"
+
+
+[[2]]
+[[2]]$indep
+[1] "V1" "V5"
+
+[[2]]$given
+[1] "V3"
+
+
+[[3]]
+[[3]]$indep
+[1] "V2" "V4"
+
+[[3]]$given
+[1] "V3"
+
+
+[[4]]
+[[4]]$indep
+[1] "V2" "V5"
+
+[[4]]$given
+[1] "V3"
+
+
+
+==== Flagged constraints, district V2_V3 ====
+-P(V2 = 0|V1 = 0)P(V3 = 0|V2 = 0,V1 = 0) - P(V2 = 1|V1 = 0)P(V3 = 0|V2 = 1,V1 = 0) - P(V2 = 0|V1 = 0)P(V3 = 1|V2 = 0,V1 = 0) + P(V2 = 1|V1 = 1)P(V3 = 0|V2 = 1,V1 = 1) <= 0
+P(V2 = 1|V1 = 0)P(V3 = 0|V2 = 1,V1 = 0) - P(V2 = 0|V1 = 1)P(V3 = 0|V2 = 0,V1 = 1) - P(V2 = 1|V1 = 1)P(V3 = 0|V2 = 1,V1 = 1) - P(V2 = 0|V1 = 1)P(V3 = 1|V2 = 0,V1 = 1) <= 0
+P(V2 = 0|V1 = 0)P(V3 = 1|V2 = 0,V1 = 0) + P(V2 = 0|V1 = 1)P(V3 = 0|V2 = 0,V1 = 1) <= 1
+P(V2 = 0|V1 = 0)P(V3 = 0|V2 = 0,V1 = 0) + P(V2 = 0|V1 = 1)P(V3 = 1|V2 = 0,V1 = 1) <= 1
+
+==== Flagged constraints, district V4_V5 ====
+-P(V4 = 0|V3 = 0)P(V5 = 0|V4 = 0,V3 = 0) - P(V4 = 1|V3 = 0)P(V5 = 0|V4 = 1,V3 = 0) - P(V4 = 0|V3 = 0)P(V5 = 1|V4 = 0,V3 = 0) + P(V4 = 1|V3 = 1)P(V5 = 0|V4 = 1,V3 = 1) <= 0
+P(V4 = 1|V3 = 0)P(V5 = 0|V4 = 1,V3 = 0) - P(V4 = 0|V3 = 1)P(V5 = 0|V4 = 0,V3 = 1) - P(V4 = 1|V3 = 1)P(V5 = 0|V4 = 1,V3 = 1) - P(V4 = 0|V3 = 1)P(V5 = 1|V4 = 0,V3 = 1) <= 0
+P(V4 = 0|V3 = 0)P(V5 = 1|V4 = 0,V3 = 0) + P(V4 = 0|V3 = 1)P(V5 = 0|V4 = 0,V3 = 1) <= 1
+P(V4 = 0|V3 = 0)P(V5 = 0|V4 = 0,V3 = 0) + P(V4 = 0|V3 = 1)P(V5 = 1|V4 = 0,V3 = 1) <= 1

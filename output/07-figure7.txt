@@ -1,0 +1,54 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
+       {V1, V3, V6, U2[u]} {V2, V4, V5, U1[u], U3[u]} 
+                         1                          2 
+MERA constraints on the dhvm: gm 
+The model has districts (unobserved variables marked with [u]:
+     {V1, V3, V6, U2[u]} with c-degree 1, {V2, V4, V5, U1[u]} with c-degree 1 
+The canonical partitioned model is available in x$dhvm_partitioned
+
+Constraints:
+------------
+* Conditional independence relations:
+V2 ⟂ V6 | V1, c("V4 ⟂ V6 | V1", "V4 ⟂ V6 | V2", "V4 ⟂ V6 | V3"), c("V6 ⟂ V5 | V1", "V6 ⟂ V5 | V2", "V6 ⟂ V5 | V3") 
+* Equality and inequality constraints by district:
+There are 8 possibly nontrivial constraints involving V1_V3_V6, 4 inequalities and 4 equalities.
+The first 4 expressions are
+-P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 0,V2 = 0)P(V6 = 0|V1 = 0) - P ...[truncated]
+-P(V1 = 1)P(V3 = 0|V1 = 1,V6 = 0,V2 = 0)P(V6 = 0|V1 = 1) - P ...[truncated]
+-P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 1,V2 = 0)P(V6 = 1|V1 = 0) - P ...[truncated]
+P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 0,V2 = 0)P(V6 = 0|V1 = 0) + P( ...[truncated]
+There are 1118 possibly nontrivial constraints involving V2_V4_V5, 1107 inequalities and 11 equalities.
+The first 4 expressions are
+-P(V2 = 0|V1 = 0)P(V4 = 1|V2 = 0,V1 = 0,V3 = 0)P(V5 = 0|V2 = ...[truncated]
+-P(V2 = 0|V1 = 0)P(V4 = 1|V2 = 0,V1 = 0,V3 = 0)P(V5 = 0|V2 = ...[truncated]
+P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0)P(V5 = 0|V2 =  ...[truncated]
+P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0)P(V5 = 0|V2 =  ...[truncated]
+
+==== First district: flagged constraints, in terms of interventional probabilities ====
+-P*(V1 = 0,V3 = 0,V6 = 0|V2 = 0) - P*(V1 = 0,V3 = 1,V6 = 0|V2 = 0) + P*(V1 = 0,V3 = 0,V6 = 0|V2 = 1) <= 0
+-P*(V1 = 1,V3 = 0,V6 = 0|V2 = 0) - P*(V1 = 1,V3 = 1,V6 = 0|V2 = 0) + P*(V1 = 1,V3 = 0,V6 = 0|V2 = 1) <= 0
+-P*(V1 = 0,V3 = 0,V6 = 1|V2 = 0) - P*(V1 = 0,V3 = 1,V6 = 1|V2 = 0) + P*(V1 = 0,V3 = 0,V6 = 1|V2 = 1) <= 0
+P*(V1 = 0,V3 = 0,V6 = 0|V2 = 0) + P*(V1 = 1,V3 = 0,V6 = 0|V2 = 0) + P*(V1 = 0,V3 = 1,V6 = 0|V2 = 0) + P*(V1 = 1,V3 = 1,V6 = 0|V2 = 0) + P*(V1 = 0,V3 = 0,V6 = 1|V2 = 0) + P*(V1 = 0,V3 = 1,V6 = 1|V2 = 0) + P*(V1 = 1,V3 = 0,V6 = 1|V2 = 1) <= 1
+P*(V1 = 0,V3 = 0,V6 = 0|V2 = 0) + P*(V1 = 0,V3 = 1,V6 = 0|V2 = 0) - P*(V1 = 0,V3 = 0,V6 = 0|V2 = 1) - P*(V1 = 0,V3 = 1,V6 = 0|V2 = 1)  =  0
+P*(V1 = 1,V3 = 0,V6 = 0|V2 = 0) + P*(V1 = 1,V3 = 1,V6 = 0|V2 = 0) - P*(V1 = 1,V3 = 0,V6 = 0|V2 = 1) - P*(V1 = 1,V3 = 1,V6 = 0|V2 = 1)  =  0
+P*(V1 = 0,V3 = 0,V6 = 1|V2 = 0) + P*(V1 = 0,V3 = 1,V6 = 1|V2 = 0) - P*(V1 = 0,V3 = 0,V6 = 1|V2 = 1) - P*(V1 = 0,V3 = 1,V6 = 1|V2 = 1)  =  0
+-P*(V1 = 0,V3 = 0,V6 = 0|V2 = 0) - P*(V1 = 1,V3 = 0,V6 = 0|V2 = 0) - P*(V1 = 0,V3 = 1,V6 = 0|V2 = 0) - P*(V1 = 1,V3 = 1,V6 = 0|V2 = 0) - P*(V1 = 0,V3 = 0,V6 = 1|V2 = 0) - P*(V1 = 0,V3 = 1,V6 = 1|V2 = 0) - P*(V1 = 1,V3 = 0,V6 = 1|V2 = 1) - P*(V1 = 1,V3 = 1,V6 = 1|V2 = 1)  =  -1
+
+==== ... and in terms of observed probabilities ====
+-P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 0,V2 = 0)P(V6 = 0|V1 = 0) - P(V1 = 0)P(V3 = 1|V1 = 0,V6 = 0,V2 = 0)P(V6 = 0|V1 = 0) + P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 0,V2 = 1)P(V6 = 0|V1 = 0) <= 0
+-P(V1 = 1)P(V3 = 0|V1 = 1,V6 = 0,V2 = 0)P(V6 = 0|V1 = 1) - P(V1 = 1)P(V3 = 1|V1 = 1,V6 = 0,V2 = 0)P(V6 = 0|V1 = 1) + P(V1 = 1)P(V3 = 0|V1 = 1,V6 = 0,V2 = 1)P(V6 = 0|V1 = 1) <= 0
+-P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 1,V2 = 0)P(V6 = 1|V1 = 0) - P(V1 = 0)P(V3 = 1|V1 = 0,V6 = 1,V2 = 0)P(V6 = 1|V1 = 0) + P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 1,V2 = 1)P(V6 = 1|V1 = 0) <= 0
+P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 0,V2 = 0)P(V6 = 0|V1 = 0) + P(V1 = 1)P(V3 = 0|V1 = 1,V6 = 0,V2 = 0)P(V6 = 0|V1 = 1) + P(V1 = 0)P(V3 = 1|V1 = 0,V6 = 0,V2 = 0)P(V6 = 0|V1 = 0) + P(V1 = 1)P(V3 = 1|V1 = 1,V6 = 0,V2 = 0)P(V6 = 0|V1 = 1) + P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 1,V2 = 0)P(V6 = 1|V1 = 0) + P(V1 = 0)P(V3 = 1|V1 = 0,V6 = 1,V2 = 0)P(V6 = 1|V1 = 0) + P(V1 = 1)P(V3 = 0|V1 = 1,V6 = 1,V2 = 1)P(V6 = 1|V1 = 1) <= 1
+P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 0,V2 = 0)P(V6 = 0|V1 = 0) + P(V1 = 0)P(V3 = 1|V1 = 0,V6 = 0,V2 = 0)P(V6 = 0|V1 = 0) - P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 0,V2 = 1)P(V6 = 0|V1 = 0) - P(V1 = 0)P(V3 = 1|V1 = 0,V6 = 0,V2 = 1)P(V6 = 0|V1 = 0)  =  0
+P(V1 = 1)P(V3 = 0|V1 = 1,V6 = 0,V2 = 0)P(V6 = 0|V1 = 1) + P(V1 = 1)P(V3 = 1|V1 = 1,V6 = 0,V2 = 0)P(V6 = 0|V1 = 1) - P(V1 = 1)P(V3 = 0|V1 = 1,V6 = 0,V2 = 1)P(V6 = 0|V1 = 1) - P(V1 = 1)P(V3 = 1|V1 = 1,V6 = 0,V2 = 1)P(V6 = 0|V1 = 1)  =  0
+P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 1,V2 = 0)P(V6 = 1|V1 = 0) + P(V1 = 0)P(V3 = 1|V1 = 0,V6 = 1,V2 = 0)P(V6 = 1|V1 = 0) - P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 1,V2 = 1)P(V6 = 1|V1 = 0) - P(V1 = 0)P(V3 = 1|V1 = 0,V6 = 1,V2 = 1)P(V6 = 1|V1 = 0)  =  0
+-P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 0,V2 = 0)P(V6 = 0|V1 = 0) - P(V1 = 1)P(V3 = 0|V1 = 1,V6 = 0,V2 = 0)P(V6 = 0|V1 = 1) - P(V1 = 0)P(V3 = 1|V1 = 0,V6 = 0,V2 = 0)P(V6 = 0|V1 = 0) - P(V1 = 1)P(V3 = 1|V1 = 1,V6 = 0,V2 = 0)P(V6 = 0|V1 = 1) - P(V1 = 0)P(V3 = 0|V1 = 0,V6 = 1,V2 = 0)P(V6 = 1|V1 = 0) - P(V1 = 0)P(V3 = 1|V1 = 0,V6 = 1,V2 = 0)P(V6 = 1|V1 = 0) - P(V1 = 1)P(V3 = 0|V1 = 1,V6 = 1,V2 = 1)P(V6 = 1|V1 = 1) - P(V1 = 1)P(V3 = 1|V1 = 1,V6 = 1,V2 = 1)P(V6 = 1|V1 = 1)  =  -1
+
+Sum of probabilities: 1   smallest probability: 0.00390625 
+Left side of the inequality of Clauser et al.: 3.5 (bound 3)
+Equality constraints satisfied: TRUE 
+Inequality constraints violated: 13 
+
+==== Shortest violated constraint (as printed in Section 5) ====
+-P*(V2 = 1,V4 = 0,V5 = 0|V1 = 0,V3 = 0) - P*(V2 = 1,V4 = 0,V5 = 1|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 1,V5 = 0|V1 = 1,V3 = 0) - P*(V2 = 0,V4 = 1,V5 = 0|V1 = 0,V3 = 1) + P*(V2 = 0,V4 = 1,V5 = 0|V1 = 1,V3 = 1) <= 0 

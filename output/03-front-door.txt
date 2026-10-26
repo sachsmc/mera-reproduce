@@ -1,0 +1,30 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
+MERA constraints on the dhvm: fd 
+The model has districts (unobserved variables marked with [u]:
+     {A, Y, U1[u]} with c-degree 1, {M} with c-degree 0 
+The canonical partitioned model is available in x$dhvm_partitioned
+
+Constraints:
+------------
+There are no conditional independence relations.
+* Equality and inequality constraints by district:
+There are 4 possibly nontrivial constraints involving A_Y, 2 inequalities and 2 equalities.
+The first 4 expressions are
+-P(A = 0)P(Y = 0|A = 0,M = 0) - P(A = 0)P(Y = 1|A = 0,M = 0) ...[truncated]
+P(A = 0)P(Y = 0|A = 0,M = 0) + P(A = 0)P(Y = 1|A = 0,M = 0)  ...[truncated]
+P(A = 0)P(Y = 0|A = 0,M = 0) + P(A = 0)P(Y = 1|A = 0,M = 0)  ...[truncated]
+-P(A = 0)P(Y = 0|A = 0,M = 0) - P(A = 0)P(Y = 1|A = 0,M = 0) ...[truncated]
+There are 0 possibly nontrivial constraints involving M, 0 inequalities and 0 equalities.
+
+==== Flagged constraints, in terms of observed probabilities ====
+-P(A = 0)P(Y = 0|A = 0,M = 0) - P(A = 0)P(Y = 1|A = 0,M = 0) + P(A = 0)P(Y = 0|A = 0,M = 1) <= 0
+P(A = 0)P(Y = 0|A = 0,M = 0) + P(A = 0)P(Y = 1|A = 0,M = 0) + P(A = 1)P(Y = 0|A = 1,M = 1) <= 1
+P(A = 0)P(Y = 0|A = 0,M = 0) + P(A = 0)P(Y = 1|A = 0,M = 0) - P(A = 0)P(Y = 0|A = 0,M = 1) - P(A = 0)P(Y = 1|A = 0,M = 1)  =  0
+-P(A = 0)P(Y = 0|A = 0,M = 0) - P(A = 0)P(Y = 1|A = 0,M = 0) - P(A = 1)P(Y = 0|A = 1,M = 1) - P(A = 1)P(Y = 1|A = 1,M = 1)  =  -1
+
+==== The same constraints, in terms of interventional probabilities ====
+-P*(A = 0,Y = 0|M = 0) - P*(A = 0,Y = 1|M = 0) + P*(A = 0,Y = 0|M = 1) <= 0
+P*(A = 0,Y = 0|M = 0) + P*(A = 0,Y = 1|M = 0) + P*(A = 1,Y = 0|M = 1) <= 1
+P*(A = 0,Y = 0|M = 0) + P*(A = 0,Y = 1|M = 0) - P*(A = 0,Y = 0|M = 1) - P*(A = 0,Y = 1|M = 1)  =  0
+-P*(A = 0,Y = 0|M = 0) - P*(A = 0,Y = 1|M = 0) - P*(A = 1,Y = 0|M = 1) - P*(A = 1,Y = 1|M = 1)  =  -1

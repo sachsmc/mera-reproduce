@@ -1,0 +1,30 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
+Vertices of the Pearl + Bonet polytope: 58 
+  of which incompatible with the instrumental variable model: 30 
+
+Example: q = 0.9 * vertex + 0.1 * uniform
+Key: <Z>
+       Z   q_00   q_01   q_10   q_11
+   <int> <char> <char> <char> <char>
+1:     0  19/40  19/40   1/40   1/40
+2:     1   1/40  19/40  19/40   1/40
+3:     2  19/40   1/40   1/40  19/40
+
+Pearl's inequality (9) holds:             TRUE 
+Bonet's inequality holds:                 TRUE 
+Inequality (10) with y = 0, d = 0 holds:   TRUE 
+Inequality (10) with y = 1, d = 0 holds:   FALSE 
+Inequality (10) with y = 0, d = 1 holds:   TRUE 
+Inequality (10) with y = 1, d = 1 holds:   FALSE 
+Inequality (11) holds:                    FALSE 
+Compatible with the IV model (complete):  FALSE 
+
+==== Complete constraints violated by the example, in terms of P* ====
+P*(X = 0,Y = 0|Z = 0) + P*(X = 1,Y = 0|Z = 0) + P*(X = 1,Y = 0|Z = 1) + P*(X = 0,Y = 1|Z = 1) - P*(X = 0,Y = 0|Z = 2) - P*(X = 1,Y = 0|Z = 2) - P*(X = 0,Y = 1|Z = 2) <= 1
+P*(X = 0,Y = 0|Z = 0) + P*(X = 1,Y = 0|Z = 0) + P*(X = 0,Y = 1|Z = 1) - P*(X = 1,Y = 0|Z = 2) - P*(X = 0,Y = 1|Z = 2) <= 1
+
+==== Which sets of inequalities are complete? (|Z| = 3) ====
+Pearl + Bonet (y = d = 0 only)           vertices  58, outside the model  30, identical to the complete set: FALSE
+Pearl + all relabellings of Bonet (10)   vertices  28, outside the model   0, identical to the complete set: TRUE
+Pearl + (10) + (11)                      vertices  28, outside the model   0, identical to the complete set: TRUE

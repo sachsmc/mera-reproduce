@@ -1,0 +1,26 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
+A Discrete Hidden Variables Model (dhvm)
+* graph data: 
+<caugi object; 10 nodes, 14 edges; simple: TRUE; session=0x000002274b1ffeb0>
+  graph_class: DAG
+  nodes: A, B, C, D, E, G, U1, U2, U3, F
+  edges: A-->B, A-->E, B-->C, C-->D, D-->F, E-->C, G-->F, U1-->B, U1-->D, U2-->A
+         U2-->C, U2-->E, U3-->D, U3-->F
+* node data:  
+      name latent nvals
+    <char> <lgcl> <int>
+ 1:      A  FALSE     2
+ 2:      B  FALSE     2
+ 3:      C  FALSE     2
+ 4:      D  FALSE     2
+ 5:      E  FALSE     2
+ 6:      G  FALSE     2
+ 7:     U1   TRUE     2
+ 8:     U2   TRUE     2
+ 9:     U3   TRUE     2
+10:      F  FALSE     2
+
+==== Districts and their c-degrees ====
+       {A, C, E, U2[u]} {B, D, F, U1[u], U3[u]}                     {G} 
+                      1                       2                       0 
