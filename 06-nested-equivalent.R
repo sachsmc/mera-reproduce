@@ -17,10 +17,8 @@ pstar_from <- function(probs, cn) {
   probs[, prob.V1V2V3 := prob.V3_V2 * prob.V2_V1 * prob.V1]
   probs[, prob.V4_rest := prob.joint / prob.V1V2V3]
   probs[, prob.test := prob.V4_rest * prob.V2_V1]
-  merge(cn$functional_relations$problevels[["V2_V4"]] %||% cn$functional_relations$problevels[[1]],
-        probs, sort = FALSE)$prob.test
+  merge(cn$functional_relations$problevels[["V2_V4"]], probs, sort = FALSE)$prob.test
 }
-`%||%` <- function(a, b) if (is.null(a)) b else a
 
 nsim <- 500
 viol_right <- matrix(FALSE, nsim, nrow(cn_right$polytope$Hrep[["V2_V4"]]))
@@ -37,5 +35,4 @@ cat("Constraints of the right graph violated by samples from the left graph:",
     sum(colSums(viol_right) > 0), "\n")
 section("Those constraints of the right graph, in terms of interventional probabilities")
 cat(hrep_to_text(cn_right$polytope$Hrep[["V2_V4"]],
-                 cn_right$functional_relations$probstarform[["V2_V4"]] %||%
-                   cn_right$functional_relations$probstarform[[1]])[colSums(viol_right) > 0], sep = "\n")
+                 cn_right$functional_relations$probstarform[["V2_V4"]])[colSums(viol_right) > 0], sep = "\n")

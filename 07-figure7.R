@@ -11,7 +11,7 @@ gm <- dhvm_merge_latents(g)
 cn <- meraconstraints(gm)
 print(cn)
 
-d1 <- grep("V1", names(cn$polytope$Hrep))[1]
+d1 <- "V1_V3_V6"
 section("First district: flagged constraints, in terms of interventional probabilities")
 cat(constraint_text(cn, d1, star = TRUE), sep = "\n")
 section("... and in terms of observed probabilities")
@@ -35,7 +35,7 @@ pt[, pstar := (p12 / p1) * (p1234 / p123) * (p12345 / p1234)]
 cat("Left side of the inequality of Clauser et al.:",
     unique(pt[, .(V1, V2, V3, V4, V5, a, pstar)])[, sum(a * pstar)], "(bound 3)\n")
 
-d2  <- grep("V2", names(cn$polytope$Hrep))[1]
+d2  <- "V2_V4_V5"
 H   <- cn$polytope$Hrep[[d2]]
 pv  <- merge(cn$functional_relations$problevels[[d2]], unique(pt[, .(V1, V2, V3, V4, V5, pstar)]), sort = FALSE)$pstar
 ok  <- hrep_test(H, pv, which = TRUE)
