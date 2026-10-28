@@ -35,6 +35,7 @@ or all together, saving each script's output to `output/`:
 | `09-tripartite-bell.R` | 4.3 | Constraint counts for the tripartite Bell graph (Figure 6); takes up to about 30 minutes |
 | `11-kedagni-mourifie.R` | 8 | Exact comparison with the inequalities of Kedagni and Mourifie (2020) for binary treatment and outcome |
 | `12-pearl-bonet-insufficient.R` | 8 | A distribution satisfying Pearl's inequalities that is incompatible with the IV model (ternary instrument) |
+| `13-inequality-criterion.R` | 8 | Proposition 8 and the conjecture after it: for 90 small districts, inequality constraints exist exactly when the district is not saturated after adding HLP edges (a few minutes) |
 | `10-benchmarks.R` | 4.4, Table 1 | Matrix sizes, constraint counts and times; with the redundancy check it takes several hours (set `check_redundancy <- FALSE` to skip it) |
 
 `common.R` holds shared setup. The closed-form screening of Proposition 4 is

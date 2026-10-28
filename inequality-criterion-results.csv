@@ -1,0 +1,91 @@
+"graph","saturated","inequalities"
+"U %-->% M1 + M2",TRUE,FALSE
+"M1 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; M1 %-->% M2; U %-->% M1 + M2",FALSE,TRUE
+"E1 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; E2 %-->% M1; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; E2 %-->% M1; M1 %-->% M2; U %-->% M1 + M2",FALSE,TRUE
+"E2 %-->% M1; E1 %-->% M2; U %-->% M1 + M2",FALSE,TRUE
+"E2 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2",FALSE,TRUE
+"E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2",FALSE,TRUE
+"E1 %-->% M1; E2 %-->% M2; U %-->% M1 + M2",FALSE,TRUE
+"E1 %-->% M1; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2",FALSE,TRUE
+"E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; E2 %-->% M1; E2 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; E2 %-->% M1; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2",FALSE,TRUE
+"E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2",TRUE,FALSE
+"U %-->% M1 + M2 + M3",TRUE,FALSE
+"M1 %-->% M2; U %-->% M1 + M2 + M3",TRUE,FALSE
+"M1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; M1 %-->% M2; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; M1 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M2; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M2; M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; E1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; E1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; E1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M1; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",FALSE,TRUE
+"E1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
+"E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3",TRUE,FALSE
