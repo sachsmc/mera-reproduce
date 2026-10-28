@@ -6,7 +6,7 @@
 ## The screening step times prob_simplex_screen(), the closed-form screening of
 ## Proposition 4 in meraconstraints (>= 0.3.0).
 source("common.R")
-check_redundancy <- TRUE
+check_redundancy <- FALSE
 
 graphs <- list(
   "IV, |Z|=|X|=|Y|=2"      = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y)),

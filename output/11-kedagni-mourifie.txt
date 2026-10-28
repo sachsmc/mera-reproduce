@@ -1,20 +1,18 @@
-Warning message:
-package 'data.table' was built under R version 4.4.3 
 
 ==== |Y| = 2, |D| = 2, |Z| = 2 ====
-[09:32:11] KM inequalities built: 73 distinct
-[09:32:11] computing vertices of KM polytope
-[09:32:11] done
+[10:09:52] KM inequalities built: 73 distinct
+[10:09:52] computing vertices of KM polytope
+[10:09:52] done
 KM inequalities (distinct): 73   our inequality constraints: 12
 Vertices of KM polytope: 12   vertices of our polytope: 12
 All KM inequalities hold on our polytope (KM valid for the graph): TRUE 
-Polytopes identical: TRUE   (0.4 s)
+Polytopes identical: TRUE   (0.3 s)
 
 ==== |Y| = 2, |D| = 2, |Z| = 3 ====
-[09:32:11] KM inequalities built: 261 distinct
-[09:32:11] computing vertices of KM polytope
-[09:32:12] done
+[10:09:52] KM inequalities built: 261 distinct
+[10:09:52] computing vertices of KM polytope
+[10:09:53] done
 KM inequalities (distinct): 261   our inequality constraints: 48
 Vertices of KM polytope: 28   vertices of our polytope: 28
 All KM inequalities hold on our polytope (KM valid for the graph): TRUE 
-Polytopes identical: TRUE   (1.3 s)
+Polytopes identical: TRUE   (0.9 s)

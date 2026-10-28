@@ -1,5 +1,3 @@
-Warning message:
-package 'data.table' was built under R version 4.4.3 
 MERA constraints on the dhvm: left 
 The model has districts (unobserved variables marked with [u]:
      {V1} with c-degree 0, {V2, V4, U2[u]} with c-degree 1, {V3} with c-degree 0 

@@ -1,8 +1,6 @@
-Warning message:
-package 'data.table' was built under R version 4.4.3 
 A Discrete Hidden Variables Model (dhvm)
 * graph data: 
-<caugi object; 10 nodes, 14 edges; simple: TRUE; session=0x000001baa4fffec0>
+<caugi object; 10 nodes, 14 edges; simple: TRUE; session=0x594d35cb22d0>
   graph_class: DAG
   nodes: A, B, C, D, E, G, U1, U2, U3, F
   edges: A-->B, A-->E, B-->C, C-->D, D-->F, E-->C, G-->F, U1-->B, U1-->D, U2-->A

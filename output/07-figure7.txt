@@ -1,5 +1,3 @@
-Warning message:
-package 'data.table' was built under R version 4.4.3 
        {V1, V3, V6, U2[u]} {V2, V4, V5, U1[u], U3[u]} 
                          1                          2 
 MERA constraints on the dhvm: gm 
