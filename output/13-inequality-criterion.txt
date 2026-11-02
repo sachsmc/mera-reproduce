@@ -1,97 +1,136 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
 Number of districts: 90 
-  1 TRUE  FALSE U %-->% M1 + M2
-  2 TRUE  FALSE M1 %-->% M2; U %-->% M1 + M2
-  3 TRUE  FALSE E1 %-->% M1; U %-->% M1 + M2
-  4 FALSE TRUE  E1 %-->% M1; M1 %-->% M2; U %-->% M1 + M2
-  5 TRUE  FALSE E1 %-->% M2; U %-->% M1 + M2
-  6 TRUE  FALSE E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
-  7 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; U %-->% M1 + M2
-  8 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
-  9 TRUE  FALSE E1 %-->% M1; E2 %-->% M1; U %-->% M1 + M2
- 10 FALSE TRUE  E1 %-->% M1; E2 %-->% M1; M1 %-->% M2; U %-->% M1 + M2
- 11 FALSE TRUE  E2 %-->% M1; E1 %-->% M2; U %-->% M1 + M2
- 12 FALSE TRUE  E2 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
- 13 TRUE  FALSE E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; U %-->% M1 + M2
- 14 FALSE TRUE  E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
- 15 FALSE TRUE  E1 %-->% M1; E2 %-->% M2; U %-->% M1 + M2
- 16 FALSE TRUE  E1 %-->% M1; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
- 17 TRUE  FALSE E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2
- 18 TRUE  FALSE E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
- 19 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2
- 20 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
- 21 TRUE  FALSE E1 %-->% M1; E2 %-->% M1; E2 %-->% M2; U %-->% M1 + M2
- 22 FALSE TRUE  E1 %-->% M1; E2 %-->% M1; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
- 23 TRUE  FALSE E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2
- 24 TRUE  FALSE E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
- 25 TRUE  FALSE E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2
- 26 TRUE  FALSE E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
- 27 TRUE  FALSE U %-->% M1 + M2 + M3
- 28 TRUE  FALSE M1 %-->% M2; U %-->% M1 + M2 + M3
- 29 TRUE  FALSE M1 %-->% M3; U %-->% M1 + M2 + M3
- 30 TRUE  FALSE M2 %-->% M3; U %-->% M1 + M2 + M3
- 31 TRUE  FALSE M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
- 32 TRUE  FALSE M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
- 33 TRUE  FALSE M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 34 TRUE  FALSE M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 35 TRUE  FALSE E1 %-->% M1; U %-->% M1 + M2 + M3
- 36 FALSE TRUE  E1 %-->% M1; M1 %-->% M2; U %-->% M1 + M2 + M3
- 37 FALSE TRUE  E1 %-->% M1; M1 %-->% M3; U %-->% M1 + M2 + M3
- 38 TRUE  FALSE E1 %-->% M1; M2 %-->% M3; U %-->% M1 + M2 + M3
- 39 FALSE TRUE  E1 %-->% M1; M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
- 40 FALSE TRUE  E1 %-->% M1; M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
- 41 FALSE TRUE  E1 %-->% M1; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 42 FALSE TRUE  E1 %-->% M1; M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 43 TRUE  FALSE E1 %-->% M2; U %-->% M1 + M2 + M3
- 44 TRUE  FALSE E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2 + M3
- 45 TRUE  FALSE E1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
- 46 FALSE TRUE  E1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
- 47 TRUE  FALSE E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
- 48 FALSE TRUE  E1 %-->% M2; M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
- 49 FALSE TRUE  E1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 50 FALSE TRUE  E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 51 TRUE  FALSE E1 %-->% M3; U %-->% M1 + M2 + M3
- 52 TRUE  FALSE M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
- 53 TRUE  FALSE E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
- 54 TRUE  FALSE E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 55 TRUE  FALSE M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
- 56 TRUE  FALSE M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 57 TRUE  FALSE E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 58 TRUE  FALSE M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 59 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; U %-->% M1 + M2 + M3
- 60 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2 + M3
- 61 FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
- 62 FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
- 63 FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
- 64 FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
- 65 FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 66 FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 67 TRUE  FALSE E1 %-->% M1; E1 %-->% M3; U %-->% M1 + M2 + M3
- 68 FALSE TRUE  E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
- 69 TRUE  FALSE E1 %-->% M1; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
- 70 TRUE  FALSE E1 %-->% M1; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 71 FALSE TRUE  E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
- 72 FALSE TRUE  E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 73 TRUE  FALSE E1 %-->% M1; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 74 FALSE TRUE  E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 75 TRUE  FALSE E1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
- 76 TRUE  FALSE E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
- 77 TRUE  FALSE E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
- 78 TRUE  FALSE E1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 79 TRUE  FALSE E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
- 80 TRUE  FALSE E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 81 TRUE  FALSE E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 82 TRUE  FALSE E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 83 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
- 84 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
- 85 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
- 86 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 87 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
- 88 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 89 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
- 90 TRUE  FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+  1 FALSE FALSE FALSE U %-->% M1 + M2
+  2 FALSE FALSE FALSE M1 %-->% M2; U %-->% M1 + M2
+  3 FALSE FALSE FALSE E1 %-->% M1; U %-->% M1 + M2
+  4 TRUE  FALSE TRUE  E1 %-->% M1; M1 %-->% M2; U %-->% M1 + M2
+  5 FALSE FALSE FALSE E1 %-->% M2; U %-->% M1 + M2
+  6 FALSE FALSE FALSE E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
+  7 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; U %-->% M1 + M2
+  8 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
+  9 FALSE FALSE FALSE E1 %-->% M1; E2 %-->% M1; U %-->% M1 + M2
+ 10 TRUE  FALSE TRUE  E1 %-->% M1; E2 %-->% M1; M1 %-->% M2; U %-->% M1 + M2
+ 11 FALSE TRUE  TRUE  E2 %-->% M1; E1 %-->% M2; U %-->% M1 + M2
+ 12 TRUE  FALSE TRUE  E2 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
+ 13 FALSE FALSE FALSE E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; U %-->% M1 + M2
+ 14 TRUE  FALSE TRUE  E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
+ 15 FALSE TRUE  TRUE  E1 %-->% M1; E2 %-->% M2; U %-->% M1 + M2
+ 16 TRUE  FALSE TRUE  E1 %-->% M1; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
+ 17 FALSE FALSE FALSE E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2
+ 18 FALSE FALSE FALSE E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
+ 19 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2
+ 20 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
+ 21 FALSE FALSE FALSE E1 %-->% M1; E2 %-->% M1; E2 %-->% M2; U %-->% M1 + M2
+ 22 TRUE  FALSE TRUE  E1 %-->% M1; E2 %-->% M1; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
+ 23 FALSE FALSE FALSE E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2
+ 24 FALSE FALSE FALSE E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
+ 25 FALSE FALSE FALSE E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; U %-->% M1 + M2
+ 26 FALSE FALSE FALSE E1 %-->% M1; E2 %-->% M1; E1 %-->% M2; E2 %-->% M2; M1 %-->% M2; U %-->% M1 + M2
+ 27 FALSE FALSE FALSE U %-->% M1 + M2 + M3
+ 28 FALSE FALSE FALSE M1 %-->% M2; U %-->% M1 + M2 + M3
+ 29 FALSE FALSE FALSE M1 %-->% M3; U %-->% M1 + M2 + M3
+ 30 FALSE FALSE FALSE M2 %-->% M3; U %-->% M1 + M2 + M3
+ 31 FALSE FALSE FALSE M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 32 FALSE FALSE FALSE M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 33 FALSE FALSE FALSE M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 34 FALSE FALSE FALSE M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 35 FALSE FALSE FALSE E1 %-->% M1; U %-->% M1 + M2 + M3
+ 36 TRUE  FALSE TRUE  E1 %-->% M1; M1 %-->% M2; U %-->% M1 + M2 + M3
+ 37 TRUE  FALSE TRUE  E1 %-->% M1; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 38 FALSE FALSE FALSE E1 %-->% M1; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 39 TRUE  FALSE TRUE  E1 %-->% M1; M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 40 TRUE  FALSE TRUE  E1 %-->% M1; M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 41 TRUE  FALSE TRUE  E1 %-->% M1; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 42 TRUE  FALSE TRUE  E1 %-->% M1; M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 43 FALSE FALSE FALSE E1 %-->% M2; U %-->% M1 + M2 + M3
+ 44 FALSE FALSE FALSE E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2 + M3
+ 45 FALSE FALSE FALSE E1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 46 TRUE  FALSE TRUE  E1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 47 FALSE FALSE FALSE E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 48 TRUE  FALSE TRUE  E1 %-->% M2; M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 49 TRUE  FALSE TRUE  E1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 50 TRUE  FALSE TRUE  E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 51 FALSE FALSE FALSE E1 %-->% M3; U %-->% M1 + M2 + M3
+ 52 FALSE FALSE FALSE M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
+ 53 FALSE FALSE FALSE E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 54 FALSE FALSE FALSE E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 55 FALSE FALSE FALSE M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 56 FALSE FALSE FALSE M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 57 FALSE FALSE FALSE E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 58 FALSE FALSE FALSE M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 59 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; U %-->% M1 + M2 + M3
+ 60 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; U %-->% M1 + M2 + M3
+ 61 TRUE  FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 62 TRUE  FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 63 TRUE  FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 64 TRUE  FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 65 TRUE  FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 66 TRUE  FALSE TRUE  E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 67 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M3; U %-->% M1 + M2 + M3
+ 68 TRUE  FALSE TRUE  E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
+ 69 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 70 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 71 TRUE  FALSE TRUE  E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 72 TRUE  FALSE TRUE  E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 73 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 74 TRUE  FALSE TRUE  E1 %-->% M1; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 75 FALSE FALSE FALSE E1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
+ 76 FALSE FALSE FALSE E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
+ 77 FALSE FALSE FALSE E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 78 FALSE FALSE FALSE E1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 79 FALSE FALSE FALSE E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 80 FALSE FALSE FALSE E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 81 FALSE FALSE FALSE E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 82 FALSE FALSE FALSE E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 83 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
+ 84 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; U %-->% M1 + M2 + M3
+ 85 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 86 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 87 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; U %-->% M1 + M2 + M3
+ 88 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 89 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+ 90 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
+
+Contains a structure of Proposition 7 vs. has inequality constraints:
+         inequalities
+structure FALSE TRUE
+    FALSE    62    0
+    TRUE      0   28
+
+Type of structure, among the districts with inequality constraints:
+            bell
+instrumental FALSE TRUE
+       FALSE     0    2
+       TRUE     26    0
+
+Proposition 6(ii) vs. has inequality constraints:
+            inequalities
+proposition6 FALSE TRUE
+       FALSE    62    0
+       TRUE      0   28
 
 Saturated after adding HLP edges vs. has inequality constraints:
          inequalities
 saturated FALSE TRUE
     FALSE     0   28
     TRUE     62    0
+
+==== Structures in the examples of Section 4.5 ====
+                 graph district instrumental  bell
+                    IV      X_Y         TRUE FALSE
+         Sequential IV    V2_V3         TRUE FALSE
+         Sequential IV    V4_V5         TRUE FALSE
+            Fig 6 left    V2_V4        FALSE FALSE
+            Fig 6 left       V3        FALSE FALSE
+           Fig 6 right    V2_V4         TRUE FALSE
+           Fig 6 right       V3        FALSE FALSE
+ X -> A <- U -> B <- Y      A_B        FALSE  TRUE
+           Verma graph      B_D        FALSE  TRUE
+           Verma graph        C        FALSE FALSE
+       Tripartite Bell V1_V2_V3        FALSE  TRUE
+            Front door      A_Y        FALSE FALSE
+            Front door        M        FALSE FALSE
+             Half Bell      A_B        FALSE FALSE
+          Fig 8 merged V1_V3_V6        FALSE FALSE
+          Fig 8 merged V2_V4_V5         TRUE  TRUE

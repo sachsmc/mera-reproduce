@@ -1,3 +1,5 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
 MERA constraints on the dhvm: left 
 The model has districts (unobserved variables marked with [u]:
      {V1} with c-degree 0, {V2, V4, U2[u]} with c-degree 1, {V3} with c-degree 0 
@@ -8,13 +10,8 @@ Constraints:
 * Conditional independence relations:
 V1 ⟂ V3 | V2 
 * Equality and inequality constraints by district:
-There are 8 possibly nontrivial constraints involving V2_V4, 4 inequalities and 4 equalities.
-The first 4 expressions are
--P(V2 = 0|V1 = 1)P(V4 = 0|V2 = 0,V1 = 1,V3 = 0) - P(V2 = 0|V ...[truncated]
--P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0) - P(V2 = 0|V ...[truncated]
-P(V2 = 0|V1 = 1)P(V4 = 0|V2 = 0,V1 = 1,V3 = 0) + P(V2 = 0|V1 ...[truncated]
-P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0) + P(V2 = 0|V1 ...[truncated]
-There are 0 possibly nontrivial constraints involving V3, 0 inequalities and 0 equalities.
+There are 0 nontrivial constraints involving V2_V4, 0 inequalities and 0 linearly independent equalities.
+There are 0 nontrivial constraints involving V3, 0 inequalities and 0 linearly independent equalities.
 MERA constraints on the dhvm: right 
 The model has districts (unobserved variables marked with [u]:
      {V1} with c-degree 0, {V2, V4, U2[u]} with c-degree 1, {V3} with c-degree 0 
@@ -25,23 +22,45 @@ Constraints:
 * Conditional independence relations:
 V1 ⟂ V3 | V2 
 * Equality and inequality constraints by district:
-There are 16 possibly nontrivial constraints involving V2_V4, 12 inequalities and 4 equalities.
+There are 8 nontrivial constraints involving V2_V4, 8 inequalities and 0 linearly independent equalities.
 The first 4 expressions are
 -P(V2 = 0|V1 = 1)P(V4 = 0|V2 = 0,V1 = 1,V3 = 0) - P(V2 = 0|V ...[truncated]
 P(V2 = 1|V1 = 0)P(V4 = 0|V2 = 1,V1 = 0,V3 = 0) - P(V2 = 0|V1 ...[truncated]
 -P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0) - P(V2 = 0|V ...[truncated]
 -P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0) - P(V2 = 1|V ...[truncated]
-There are 0 possibly nontrivial constraints involving V3, 0 inequalities and 0 equalities.
+There are 0 nontrivial constraints involving V3, 0 inequalities and 0 linearly independent equalities.
 
-Constraints of the left graph ever violated by samples from the left graph: 0 
-Constraints of the right graph violated by samples from the left graph: 8 
+==== Equality constraints ====
+Rank left: 6   right: 6   together: 6 
+Nontrivial, left: 0   right: 0 
 
-==== Those constraints of the right graph, in terms of interventional probabilities ====
--P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) + P*(V2 = 1,V4 = 0|V1 = 0,V3 = 1) - P*(V2 = 1,V4 = 0|V1 = 1,V3 = 1) <= 0
-P*(V2 = 1,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) - P*(V2 = 1,V4 = 0|V1 = 1,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) <= 0
--P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) - P*(V2 = 1,V4 = 0|V1 = 0,V3 = 1) + P*(V2 = 1,V4 = 0|V1 = 1,V3 = 1) <= 0
--P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 1,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) + P*(V2 = 1,V4 = 0|V1 = 1,V3 = 0) <= 0
-P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) + P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) <= 1
-P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) + P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) <= 1
-P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) + P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 0|V1 = 0,V3 = 1) + P*(V2 = 0,V4 = 0|V1 = 1,V3 = 1) <= 1
-P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) + P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) + P*(V2 = 0,V4 = 0|V1 = 0,V3 = 1) - P*(V2 = 0,V4 = 0|V1 = 1,V3 = 1) <= 1
+==== Inequality constraints ====
+Left: 16 of which nontrivial 0 
+Right: 24 of which nontrivial 8 
+
+==== Each nontrivial row of the right graph, and its form in the paper ====
+v2 = 1, v3 = 1, v4 = 0  <-  -P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) + P*(V2 = 1,V4 = 0|V1 = 0,V3 = 1) - P*(V2 = 1,V4 = 0|V1 = 1,V3 = 1) <= 0
+v2 = 1, v3 = 0, v4 = 0  <-  P*(V2 = 1,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) - P*(V2 = 1,V4 = 0|V1 = 1,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) <= 0
+v2 = 1, v3 = 1, v4 = 1  <-  -P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) - P*(V2 = 1,V4 = 0|V1 = 0,V3 = 1) + P*(V2 = 1,V4 = 0|V1 = 1,V3 = 1) <= 0
+v2 = 1, v3 = 0, v4 = 1  <-  -P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 1,V4 = 0|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) + P*(V2 = 1,V4 = 0|V1 = 1,V3 = 0) <= 0
+v2 = 0, v3 = 0, v4 = 1  <-  P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) + P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) <= 1
+v2 = 0, v3 = 0, v4 = 0  <-  P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) + P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) <= 1
+v2 = 0, v3 = 1, v4 = 1  <-  P*(V2 = 0,V4 = 0|V1 = 0,V3 = 0) + P*(V2 = 0,V4 = 1|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 0|V1 = 0,V3 = 1) + P*(V2 = 0,V4 = 0|V1 = 1,V3 = 1) <= 1
+v2 = 0, v3 = 1, v4 = 0  <-  P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) + P*(V2 = 0,V4 = 1|V1 = 1,V3 = 0) + P*(V2 = 0,V4 = 0|V1 = 0,V3 = 1) - P*(V2 = 0,V4 = 0|V1 = 1,V3 = 1) <= 1
+
+Largest left side of these inequalities over the vertices, right graph: 1   left graph: 2 
+
+==== Example in the paper: V2 = 0 with probability 0.9, V4 = V1 with probability 0.9 ====
+All constraints of the left graph hold: TRUE 
+Rows of the right graph violated: 2 
+v2 = 0, v3 = 0, v4 = 0 v2 = 0, v3 = 0, v4 = 1 v2 = 1, v3 = 0, v4 = 0 
+                  1.62                   0.18                   0.18 
+v2 = 1, v3 = 0, v4 = 1 v2 = 0, v3 = 1, v4 = 0 v2 = 0, v3 = 1, v4 = 1 
+                  0.02                   1.62                   0.18 
+v2 = 1, v3 = 1, v4 = 0 v2 = 1, v3 = 1, v4 = 1 
+                  0.18                   0.02 
+
+==== Sampling from the left graph ====
+Constraints of the left graph ever violated: 0 
+Constraints of the right graph violated: 8 
+These are exactly the nontrivial rows: TRUE 

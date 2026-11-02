@@ -1,3 +1,5 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
 MERA constraints on the dhvm: fd 
 The model has districts (unobserved variables marked with [u]:
      {A, Y, U1[u]} with c-degree 1, {M} with c-degree 0 
@@ -7,21 +9,43 @@ Constraints:
 ------------
 There are no conditional independence relations.
 * Equality and inequality constraints by district:
-There are 4 possibly nontrivial constraints involving A_Y, 2 inequalities and 2 equalities.
-The first 4 expressions are
--P(A = 0)P(Y = 0|A = 0,M = 0) - P(A = 0)P(Y = 1|A = 0,M = 0) ...[truncated]
-P(A = 0)P(Y = 0|A = 0,M = 0) + P(A = 0)P(Y = 1|A = 0,M = 0)  ...[truncated]
-P(A = 0)P(Y = 0|A = 0,M = 0) + P(A = 0)P(Y = 1|A = 0,M = 0)  ...[truncated]
--P(A = 0)P(Y = 0|A = 0,M = 0) - P(A = 0)P(Y = 1|A = 0,M = 0) ...[truncated]
-There are 0 possibly nontrivial constraints involving M, 0 inequalities and 0 equalities.
+There are 0 nontrivial constraints involving A_Y, 0 inequalities and 0 linearly independent equalities.
+There are 0 nontrivial constraints involving M, 0 inequalities and 0 linearly independent equalities.
 
-==== Flagged constraints, in terms of observed probabilities ====
--P(A = 0)P(Y = 0|A = 0,M = 0) - P(A = 0)P(Y = 1|A = 0,M = 0) + P(A = 0)P(Y = 0|A = 0,M = 1) <= 0
-P(A = 0)P(Y = 0|A = 0,M = 0) + P(A = 0)P(Y = 1|A = 0,M = 0) + P(A = 1)P(Y = 0|A = 1,M = 1) <= 1
+District A_Y : 8 inequality and 3 equality constraints; 0 nontrivial
+
+==== Equality constraints, in terms of interventional probabilities ====
+-P*(A = 0,Y = 0|M = 0) - P*(A = 1,Y = 0|M = 0) - P*(A = 0,Y = 1|M = 0) - P*(A = 1,Y = 1|M = 0)  =  -1
+P*(A = 0,Y = 0|M = 0) + P*(A = 0,Y = 1|M = 0) - P*(A = 0,Y = 0|M = 1) - P*(A = 0,Y = 1|M = 1)  =  0
+-P*(A = 0,Y = 0|M = 0) - P*(A = 0,Y = 1|M = 0) - P*(A = 1,Y = 0|M = 1) - P*(A = 1,Y = 1|M = 1)  =  -1
+
+==== ... and in terms of observed probabilities ====
+-P(A = 0)P(Y = 0|A = 0,M = 0) - P(A = 1)P(Y = 0|A = 1,M = 0) - P(A = 0)P(Y = 1|A = 0,M = 0) - P(A = 1)P(Y = 1|A = 1,M = 0)  =  -1
 P(A = 0)P(Y = 0|A = 0,M = 0) + P(A = 0)P(Y = 1|A = 0,M = 0) - P(A = 0)P(Y = 0|A = 0,M = 1) - P(A = 0)P(Y = 1|A = 0,M = 1)  =  0
 -P(A = 0)P(Y = 0|A = 0,M = 0) - P(A = 0)P(Y = 1|A = 0,M = 0) - P(A = 1)P(Y = 0|A = 1,M = 1) - P(A = 1)P(Y = 1|A = 1,M = 1)  =  -1
 
-==== The same constraints, in terms of interventional probabilities ====
+==== The entry p_k that makes each inequality a nonnegativity constraint ====
+  constraint                                                                  A
+1 -P*(A = 0,Y = 0|M = 1) <= 0                                                 0
+2 -P*(A = 0,Y = 0|M = 0) <= 0                                                 0
+3 -P*(A = 0,Y = 0|M = 0) - P*(A = 0,Y = 1|M = 0) + P*(A = 0,Y = 0|M = 1) <= 0 0
+4 -P*(A = 0,Y = 1|M = 0) <= 0                                                 0
+5 -P*(A = 1,Y = 0|M = 1) <= 0                                                 1
+6 -P*(A = 1,Y = 0|M = 0) <= 0                                                 1
+7 P*(A = 0,Y = 0|M = 0) + P*(A = 0,Y = 1|M = 0) + P*(A = 1,Y = 0|M = 1) <= 1  1
+8 P*(A = 0,Y = 0|M = 0) + P*(A = 1,Y = 0|M = 0) + P*(A = 0,Y = 1|M = 0) <= 1  1
+  Y M
+1 0 1
+2 0 0
+3 1 1
+4 1 0
+5 0 1
+6 0 0
+7 1 1
+8 1 0
+Distinct entries: 8 of 8 
+
+==== The screen that ignores the equality constraints wrongly flags these ====
 -P*(A = 0,Y = 0|M = 0) - P*(A = 0,Y = 1|M = 0) + P*(A = 0,Y = 0|M = 1) <= 0
 P*(A = 0,Y = 0|M = 0) + P*(A = 0,Y = 1|M = 0) + P*(A = 1,Y = 0|M = 1) <= 1
 P*(A = 0,Y = 0|M = 0) + P*(A = 0,Y = 1|M = 0) - P*(A = 0,Y = 0|M = 1) - P*(A = 0,Y = 1|M = 1)  =  0

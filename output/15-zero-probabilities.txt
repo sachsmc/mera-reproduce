@@ -1,0 +1,26 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
+
+==== Distributions in the model, with many zero probabilities ====
+            wrong_entries rejected free_entries zero_entries
+IV                      0        0           48          170
+Front door              0        0           84          193
+Verma graph             0        0          256          362
+Fig 6 right             0        0          224          307
+Bell                    0        0          208          306
+Sequential              0        0          120          332
+
+==== Verma graph with C = B, compared with the instrumental inequalities ====
+         iv
+remark    violated satisfied
+  rejects      279         0
+  accepts        0       217
+
+==== Settings that are never observed ====
+IV with P(Z = 1) = 0, any P(x, y | Z = 0): accepted 100 of 100
+Front door with M = A, any P(a, y): accepted 100 of 100
+Bell graph with P(X = 1) = 0:
+         truth
+remark    A, Y dependent A, Y independent
+  rejects            100                0
+  accepts              0              100

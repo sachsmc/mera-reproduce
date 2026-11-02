@@ -27,7 +27,7 @@ set_partitions <- function(x) {
 km_compare <- function(ny, nz) {
   g  <- dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y), nvals = c(Y = ny, Z = nz))
   cn <- meraconstraints(g)
-  lev <- cn$functional_relations$problevels[[1]][, c("X", "Y", "Z")]
+  lev <- entry_levels(cn, 1)[, c("X", "Y", "Z")]
   n  <- nrow(lev)
   idx <- function(d, y, z) which(lev$X == d & lev$Y == y & lev$Z == z)
   Y <- 0:(ny - 1); Z <- 0:(nz - 1)

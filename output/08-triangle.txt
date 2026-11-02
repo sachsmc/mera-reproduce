@@ -1,3 +1,5 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
 {V1, V2, V3, U1[u], U2[u], U3[u]} 
                                 3 
 MERA constraints on the dhvm: dhvm_merge_latents(tri) 
@@ -9,6 +11,6 @@ Constraints:
 ------------
 There are no conditional independence relations.
 * Equality and inequality constraints by district:
-There are 0 possibly nontrivial constraints involving V1_V3_V2, 0 inequalities and 0 equalities.
+There are 0 nontrivial constraints involving V1_V3_V2, 0 inequalities and 0 linearly independent equalities.
 
-Number of constraints flagged as potentially nontrivial: 0 
+Number of nontrivial constraints (Proposition 6): 0 

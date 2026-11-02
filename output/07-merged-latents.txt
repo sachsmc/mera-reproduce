@@ -1,0 +1,65 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
+       {V1, V3, V6, U2[u]} {V2, V4, V5, U1[u], U3[u]} 
+                         1                          2 
+MERA constraints on the dhvm: gm 
+The model has districts (unobserved variables marked with [u]:
+     {V1, V3, V6, U2[u]} with c-degree 1, {V2, V4, V5, U1[u]} with c-degree 1 
+The canonical partitioned model is available in x$dhvm_partitioned
+
+Constraints:
+------------
+* Conditional independence relations:
+V2 ⟂ V6 | V1, c("V4 ⟂ V6 | V1", "V4 ⟂ V6 | V2", "V4 ⟂ V6 | V3"), c("V6 ⟂ V5 | V1", "V6 ⟂ V5 | V2", "V6 ⟂ V5 | V3") 
+* Equality and inequality constraints by district:
+There are 0 nontrivial constraints involving V1_V3_V6, 0 inequalities and 0 linearly independent equalities.
+There are 1102 nontrivial constraints involving V2_V4_V5, 1096 inequalities and 6 linearly independent equalities.
+The first 4 expressions are
+-P(V2 = 0|V1 = 0)P(V4 = 1|V2 = 0,V1 = 0,V3 = 0)P(V5 = 0|V2 = ...[truncated]
+-P(V2 = 0|V1 = 0)P(V4 = 1|V2 = 0,V1 = 0,V3 = 0)P(V5 = 0|V2 = ...[truncated]
+P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0)P(V5 = 0|V2 =  ...[truncated]
+P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0)P(V5 = 0|V2 =  ...[truncated]
+
+==== Constraint counts (Proposition 6) ====
+                V1_V3_V6 V2_V4_V5
+ineq                  16     1128
+nontrivial_ineq        0     1096
+eq                     5       12
+nontrivial_eq          0        6
+
+==== First district: equality constraints, in terms of interventional probabilities ====
+-P*(V1 = 0,V3 = 0,V6 = 0|V2 = 0) - P*(V1 = 1,V3 = 0,V6 = 0|V2 = 0) - P*(V1 = 0,V3 = 1,V6 = 0|V2 = 0) - P*(V1 = 1,V3 = 1,V6 = 0|V2 = 0) - P*(V1 = 0,V3 = 0,V6 = 1|V2 = 0) - P*(V1 = 1,V3 = 0,V6 = 1|V2 = 0) - P*(V1 = 0,V3 = 1,V6 = 1|V2 = 0) - P*(V1 = 1,V3 = 1,V6 = 1|V2 = 0)  =  -1
+P*(V1 = 0,V3 = 0,V6 = 0|V2 = 0) + P*(V1 = 0,V3 = 1,V6 = 0|V2 = 0) - P*(V1 = 0,V3 = 0,V6 = 0|V2 = 1) - P*(V1 = 0,V3 = 1,V6 = 0|V2 = 1)  =  0
+P*(V1 = 1,V3 = 0,V6 = 0|V2 = 0) + P*(V1 = 1,V3 = 1,V6 = 0|V2 = 0) - P*(V1 = 1,V3 = 0,V6 = 0|V2 = 1) - P*(V1 = 1,V3 = 1,V6 = 0|V2 = 1)  =  0
+P*(V1 = 0,V3 = 0,V6 = 1|V2 = 0) + P*(V1 = 0,V3 = 1,V6 = 1|V2 = 0) - P*(V1 = 0,V3 = 0,V6 = 1|V2 = 1) - P*(V1 = 0,V3 = 1,V6 = 1|V2 = 1)  =  0
+-P*(V1 = 0,V3 = 0,V6 = 0|V2 = 0) - P*(V1 = 1,V3 = 0,V6 = 0|V2 = 0) - P*(V1 = 0,V3 = 1,V6 = 0|V2 = 0) - P*(V1 = 1,V3 = 1,V6 = 0|V2 = 0) - P*(V1 = 0,V3 = 0,V6 = 1|V2 = 0) - P*(V1 = 0,V3 = 1,V6 = 1|V2 = 0) - P*(V1 = 1,V3 = 0,V6 = 1|V2 = 1) - P*(V1 = 1,V3 = 1,V6 = 1|V2 = 1)  =  -1
+
+==== First district: inequality constraints that are nonnegativity constraints ====
+16 of 16 inequality constraints
+
+==== First district: the inequality displayed in Section 5 ====
+Largest value over the vertices of the left side minus the right side: 0 
+Adding equality constraints turns it into P*(V1 = 0, V3 = 1, V6 = 0 | V2 = 1) >= 0: TRUE 
+
+==== Example distribution ====
+Sum of probabilities: 1   smallest probability: 1/256 
+Conditional independencies hold: TRUE 
+Inner sum for each (v1, v3):
+      V1    V3 inner
+   <int> <int> <num>
+1:     0     0 0.875
+2:     1     0 0.875
+3:     0     1 0.875
+4:     1     1 0.875
+Left side of the inequality of Clauser et al.: 3.5 (bound 3)
+P*(V4 = 1 | v1, v3) for each (v1, v3): 0.5 0.5 0.5 0.5 
+First district: all constraints hold: TRUE 
+Second district: equality constraints satisfied: TRUE 
+Second district: inequality constraints violated: 13 
+All violated constraints are nontrivial: TRUE 
+
+==== Shortest violated constraint (as printed in Section 5) ====
+-P*(V2 = 1,V4 = 0,V5 = 0|V1 = 0,V3 = 0) - P*(V2 = 1,V4 = 0,V5 = 1|V1 = 0,V3 = 0) - P*(V2 = 0,V4 = 1,V5 = 0|V1 = 1,V3 = 0) - P*(V2 = 0,V4 = 1,V5 = 0|V1 = 0,V3 = 1) + P*(V2 = 0,V4 = 1,V5 = 0|V1 = 1,V3 = 1) <= 0 
+
+==== Second district: the Verma-type constraint ====
+rank(N, O): 6   rank(N, O, margin): 12   rank(N, O, H_e): 12 

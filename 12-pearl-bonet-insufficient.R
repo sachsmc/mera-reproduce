@@ -14,7 +14,7 @@ source("common.R")
 nz <- 3
 g  <- dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y), nvals = c(Z = nz))
 cn <- meraconstraints(g)
-lev <- cn$functional_relations$problevels[[1]][, c("X", "Y", "Z")]
+lev <- entry_levels(cn, 1)[, c("X", "Y", "Z")]
 n   <- nrow(lev); Zs <- 0:(nz - 1)
 idx <- function(d, y, z) which(lev$X == d & lev$Y == y & lev$Z == z)
 q   <- function(y, d, z, s = 1) { a <- numeric(n); a[idx(d, y, z)] <- s; a }

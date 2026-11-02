@@ -1,10 +1,39 @@
-## Discussion, Proposition 8 and the conjecture after it: exhaustive check of the graphical
-## criterion for when a c-degree 1 district has inequality constraints. Districts: members M1..Mk sharing one latent U, with exogenous
-## binary external parents E1..Em. For each graph, compare
-##   (a) whether the district is "saturated" after adding HLP edges, with
+## Section 4.5, Proposition 7 and the conjecture after it: exhaustive check of the graphical
+## criterion for when a c-degree 1 district has inequality constraints. Districts: members
+## M1..Mk sharing one latent U, with exogenous binary external parents E1..Em. For each
+## graph, compare
+##   (a) whether the district contains an instrumental-type or Bell-type structure
+##       (Proposition 7), with
 ##   (b) whether the district polytope has inequality constraints beyond the probability
 ##       constraints and its own equality constraints (exact polytope comparison).
+## As cross-checks, also compare (b) with Proposition 6(ii), and with whether the district
+## is "saturated" after adding HLP edges. The last part classifies the examples in the paper.
 source("common.R")
+
+## ---- structures of Proposition 7 ----------------------------------------------------
+## pa: named list of parent sets of the members; ext: the external parents.
+## All directed paths from W through members.
+member_paths <- function(pa, W, members) {
+  out <- list()
+  extend <- function(p) for (m in members) if (p[length(p)] %in% pa[[m]] && !(m %in% p)) {
+    q <- c(p, m); out[[length(out) + 1]] <<- q; extend(q)
+  }
+  extend(W)
+  out
+}
+structures <- function(pa, members, ext) {
+  paths <- lapply(setNames(ext, ext), member_paths, pa = pa, members = members)
+  reaches <- function(W, V) any(vapply(paths[[W]], \(p) p[length(p)] == V, logical(1)))
+  instrumental <- FALSE; bell <- FALSE
+  for (W in ext) for (p in paths[[W]]) {
+    A <- p[length(p)]
+    for (B in setdiff(members, A))
+      if (A %in% pa[[B]] && !(B %in% p) && !any(p[-length(p)] %in% pa[[B]])) instrumental <- TRUE
+  }
+  for (A in members) for (B in setdiff(members, A)) for (WA in ext) for (WB in ext)
+    if (reaches(WA, A) && !reaches(WA, B) && reaches(WB, B) && !reaches(WB, A)) bell <- TRUE
+  c(instrumental = instrumental, bell = bell)
+}
 
 ## ---- graphical criterion ----------------------------------------------------------
 ## pa: named list of parent sets (members and externals; every member also has "U").
@@ -79,8 +108,11 @@ run_case <- function(k, ext_targets, internal) {
   cn <- meraconstraints(g)
   j <- which(sapply(cn$functional_relations$district_parms$poterms, \(x) setequal(x$out, members)))
   if (!length(j)) return(NULL)
-  data.frame(graph = paste(edges, collapse = "; "), saturated = saturated_after_hlp(pa, members),
-             inequalities = has_inequalities(cn, j))
+  H <- cn$polytope$Hrep[[j]]
+  st <- structures(pa, members, exts)
+  data.frame(graph = paste(edges, collapse = "; "), instrumental = st[["instrumental"]], bell = st[["bell"]],
+             saturated = saturated_after_hlp(pa, members), inequalities = has_inequalities(cn, j),
+             proposition6 = any(cn$nontrivial[[j]] & H[, 1] == 0))
 }
 
 subsets <- function(k) unlist(lapply(1:k, \(s) combn(k, s, simplify = FALSE)), recursive = FALSE)
@@ -96,10 +128,44 @@ for (k in 2:3) {
 cat("Number of districts:", length(cases), "\n")
 for (i in seq_along(cases)) {
   cs <- cases[[i]]
-  r <- tryCatch(run_case(cs$k, cs$et, cs$int), error = function(e) data.frame(graph = conditionMessage(e), saturated = NA, inequalities = NA))
-  if (!is.null(r)) { results[[length(results) + 1]] <- r; cat(sprintf("%3d %-5s %-5s %s\n", i, r$saturated, r$inequalities, r$graph)); flush.console() }
+  r <- run_case(cs$k, cs$et, cs$int)
+  if (!is.null(r)) { results[[length(results) + 1]] <- r; cat(sprintf("%3d %-5s %-5s %-5s %s\n", i, r$instrumental, r$bell, r$inequalities, r$graph)); flush.console() }
 }
 res <- do.call(rbind, results)
+res$structure <- res$instrumental | res$bell
+cat("\nContains a structure of Proposition 7 vs. has inequality constraints:\n")
+print(table(structure = res$structure, inequalities = res$inequalities, useNA = "ifany"))
+cat("\nType of structure, among the districts with inequality constraints:\n")
+print(table(instrumental = res$instrumental[res$inequalities], bell = res$bell[res$inequalities]))
+cat("\nProposition 6(ii) vs. has inequality constraints:\n")
+print(table(proposition6 = res$proposition6, inequalities = res$inequalities, useNA = "ifany"))
 cat("\nSaturated after adding HLP edges vs. has inequality constraints:\n")
 print(table(saturated = res$saturated, inequalities = res$inequalities, useNA = "ifany"))
 write.csv(res, "inequality-criterion-results.csv", row.names = FALSE)
+
+## ---- the examples of Section 4.5 ---------------------------------------------------
+section("Structures in the examples of Section 4.5")
+examples <- list(
+  "IV"                    = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y)),
+  "Sequential IV"         = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4 %-->% V5, U2 %-->% V2 + V3, U3 %-->% V4 + V5)),
+  "Fig 6 left"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V1 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 6 right"           = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
+  "X -> A <- U -> B <- Y" = dhvm(caugi(X %-->% A, Y %-->% B, U %-->% A + B)),
+  "Verma graph"           = dhvm(caugi(A %-->% B %-->% C %-->% D, U %-->% B + D)),
+  "Tripartite Bell"       = dhvm(caugi(X %-->% V1, Y %-->% V2, Z %-->% V3, U %-->% V1 + V2 + V3)),
+  "Front door"            = dhvm(caugi(A %-->% M %-->% Y, U1 %-->% A + Y)),
+  "Half Bell"             = dhvm(caugi(W %-->% A, U %-->% A + B)),
+  "Fig 8 merged"          = dhvm_merge_latents(dhvm(caugi(V1 %-->% V2 + V6, V2 %-->% V3, V3 %-->% V4, V4 %-->% V5, V6 %-->% V3,
+                                                          U1 %-->% V2 + V4, U2 %-->% V1 + V3 + V6, U3 %-->% V4 + V5)))
+)
+tab <- do.call(rbind, lapply(names(examples), \(nm) {
+  g  <- examples[[nm]]
+  dp <- dhvm_district_params(g)
+  do.call(rbind, lapply(seq_along(dp$poterms), \(j) {
+    members <- dp$poterms[[j]]$out; ext <- dp$poterms[[j]]$do
+    pa <- setNames(lapply(members, \(m) parents(g$caugi_graph, nodes = m)), members)
+    st <- structures(pa, members, ext)
+    data.frame(graph = nm, district = names(dp$poterms)[j], instrumental = st[["instrumental"]], bell = st[["bell"]])
+  }))
+}))
+print(tab, row.names = FALSE)

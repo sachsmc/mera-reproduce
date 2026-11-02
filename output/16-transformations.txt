@@ -1,0 +1,45 @@
+Warning message:
+package 'data.table' was built under R version 4.4.3 
+
+==== Figure 2 ====
+c-degree of the left, center and right DAGs: 2 2 1 
+Proposition 1 adds Z -> X to the left DAG: TRUE 
+Proposition 2 applied directly to the left DAG, U1, D = {X}: FALSE TRUE 
+Proposition 2 applied to the center DAG, U1, D = {X}: TRUE TRUE 
+After splitting, both new unobserved vertices have a single child, which leaves the right DAG.
+Conditional independencies of the three DAGs: 0 0 0 
+
+==== Figure 8: the district {V2, V4, V5} ====
+  a  b   hlp
+ V4 V2 FALSE
+ V5 V2 FALSE
+ V2 V4 FALSE
+ V5 V4 FALSE
+ V2 V5 FALSE
+ V4 V5 FALSE
+
+Every way of splitting U1, U3 or both, with C_i not all empty:
+  U1       D = {V2}: cond1 cond2 
+FALSE FALSE 
+  U1       D = {V4}: cond1 cond2 
+FALSE  TRUE 
+  U3       D = {V4}: cond1 cond2 
+FALSE  TRUE 
+  U3       D = {V5}: cond1 cond2 
+FALSE FALSE 
+  U1, U3   D = {V4}: cond1 cond2 
+FALSE  TRUE 
+
+==== Section 4.5: half of a Bell scenario, W -> A <- U -> B ====
+Proposition 1 adds B -> A: TRUE 
+MERA constraints on the dhvm: hb 
+The model has districts (unobserved variables marked with [u]:
+     {W} with c-degree 0, {A, B, U[u]} with c-degree 1 
+The canonical partitioned model is available in x$dhvm_partitioned
+
+Constraints:
+------------
+* Conditional independence relations:
+W ⟂ B |  
+* Equality and inequality constraints by district:
+There are 0 nontrivial constraints involving A_B, 0 inequalities and 0 linearly independent equalities.
