@@ -1,4 +1,4 @@
-## Section 3.3: the front door model (Figure 5). Proposition 6 finds no nontrivial
+## Section 3.3: the front door model. Proposition 6 finds no nontrivial
 ## constraints: the equality constraints are normalization and (O), and each inequality
 ## constraint is a nonnegativity constraint in a different form.
 source("common.R")

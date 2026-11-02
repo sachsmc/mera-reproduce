@@ -1,4 +1,4 @@
-## Section 2.5, discussion after Proposition 3: the graph Z -> X <- H -> Y <- W, with H unobserved.
+## Reviewer 1, comment 1, and Proposition 3: the graph Z -> X <- H -> Y <- W, with H unobserved.
 ## The district factor needs Z in the second factor: P(x | z) P(y | x, z, w).
 ## Dropping Z, i.e. using P(x | z) P(y | x, w), gives the wrong value.
 source("common.R")

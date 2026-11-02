@@ -1,4 +1,4 @@
-## Section 5: the triangle graph (Figure 9). After merging the three unobserved variables,
+## Section 5: the triangle scenario. After merging the three unobserved variables,
 ## the algorithm finds no nontrivial constraints.
 source("common.R")
 

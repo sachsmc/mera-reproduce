@@ -1,4 +1,4 @@
-## Section 4.3: the tripartite Bell graph (Figure 7). This takes up to about half an hour.
+## Section 4.2: the tripartite Bell graph (Figure 6). This takes up to about half an hour.
 source("common.R")
 
 bell <- dhvm(caugi(X %-->% V1, Y %-->% V2, Z %-->% V3, U %-->% V1 + V2 + V3))
@@ -32,9 +32,10 @@ N <- t(vapply(unique(do.call(paste, lev[c("X", "Y", "Z")])), \(u) as.numeric(do.
 cat("rank(H_e):", qr(E)$rank, "  rank(normalization, margins):", qr(rbind(N, rows))$rank,
     "  rank of all together:", qr(rbind(N, rows, E))$rank, "\n")
 
-section("The inequality displayed in Section 4.3")
+section("The inequality displayed in Section 4.2")
 coefficient <- function(v, s) as.numeric(do.call(paste0, lev[c("V1", "V2", "V3")]) == v & do.call(paste0, lev[c("X", "Y", "Z")]) == s)
 a <- coefficient("001", "010") + coefficient("010", "101") - coefficient("110", "001") - coefficient("010", "100") -
   coefficient("000", "111") - coefficient("001", "000") - coefficient("011", "000")
 i <- which(H[, 1] == 0 & H[, 2] == 0 & apply(H[, -(1:2)], 1, \(r) all(-r == a)))
+stopifnot(length(i) == 1, fl[i])
 cat("Row of H_i:", i, "  nontrivial:", if (length(i)) fl[i] else NA, "\n")

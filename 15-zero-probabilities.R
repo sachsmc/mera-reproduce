@@ -57,7 +57,7 @@ graphs <- list(
   "IV"          = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y)),
   "Front door"  = dhvm(caugi(A %-->% M %-->% Y, U1 %-->% A + Y)),
   "Verma graph" = dhvm(caugi(A %-->% B %-->% C %-->% D, U %-->% B + D)),
-  "Fig 6 right" = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 5 right" = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
   "Bell"        = dhvm(caugi(X %-->% A, Y %-->% B, U %-->% A + B)),
   "Sequential"  = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4 %-->% V5, U2 %-->% V2 + V3, U3 %-->% V4 + V5))
 )

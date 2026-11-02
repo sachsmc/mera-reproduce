@@ -1,5 +1,5 @@
-## Section 4.2: two nested Markov equivalent graphs with different inequality constraints
-## (Figure 6). Both graphs have the same conditional independence and the same, trivial,
+## Section 4.1: two nested Markov equivalent graphs with different inequality constraints
+## (Figure 5). Both graphs have the same conditional independence and the same, trivial,
 ## equality constraints. The 8 nontrivial inequality constraints of the right graph are the
 ## instrumental inequalities for each value of V3. Distributions sampled from the left graph
 ## never violate the left graph's constraints, but do violate these 8.
@@ -57,7 +57,7 @@ Vl <- rcdd::q2d(cn_left$polytope$Vrep[[j]])[, -(1:2)]
 cat("\nLargest left side of these inequalities over the vertices, right graph:", max(fam %*% t(Vr)),
     "  left graph:", max(fam %*% t(Vl)), "\n")
 
-section("Example in the paper: V2 = 0 with probability 0.9, V4 = V1 with probability 0.9")
+section("Example: V2 = 0 with probability 0.9, V4 = V1 with probability 0.9")
 p <- with(lev, ifelse(V2 == 0, .9, .1) * ifelse(V4 == V1, .9, .1))
 cat("All constraints of the left graph hold:", hrep_test(Hl, p), "\n")
 cat("Rows of the right graph violated:", sum(!hrep_test(Hr, p, which = TRUE)), "\n")

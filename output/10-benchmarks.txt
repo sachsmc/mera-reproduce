@@ -6,11 +6,11 @@ Running: IV, |Z|=4, |X|=|Y|=2
   V-to-H: 0.13 s  nontrivial screen: 0.039 s
 Running: IV, |Z|=|X|=|Y|=3 
   V-to-H: 15.888 s  nontrivial screen: 1.617 s
-Running: Fig 6 right 
+Running: Fig 5 right 
   V-to-H: 0.008 s  nontrivial screen: 0.005 s
 Running: X -> A <- U -> B <- Y 
   V-to-H: 0.002 s  nontrivial screen: 0.003 s
-Running: Fig 8 merged 
+Running: Fig 7 merged 
   V-to-H: 0.224 s  nontrivial screen: 0.219 s
 Running: Tripartite Bell 
   V-to-H: 1123.319 s  nontrivial screen: 25.829 s
@@ -19,11 +19,11 @@ Running: Tripartite Bell
   IV, |Z|=3, |X|=|Y|=2      X_Y       2     12         32              28
   IV, |Z|=4, |X|=|Y|=2      X_Y       2     16         64              60
      IV, |Z|=|X|=|Y|=3      X_Y       2     27        729             333
-           Fig 6 right    V2_V4       2     16         64              40
-           Fig 6 right       V3       1      4          4               4
+           Fig 5 right    V2_V4       2     16         64              40
+           Fig 5 right       V3       1      4          4               4
  X -> A <- U -> B <- Y      A_B       2     16         16              16
-          Fig 8 merged V1_V3_V6       3     16        128              16
-          Fig 8 merged V2_V4_V5       3     32         64              48
+          Fig 7 merged V1_V3_V6       3     16        128              16
+          Fig 7 merged V2_V4_V5       3     32         64              48
        Tripartite Bell V1_V2_V3       3     64         64              64
  n_ineq n_eq n_nontrivial_ineq n_nontrivial_eq n_redundant_removed sec_VtoH
      12    2                 4               0                  NA    0.003
@@ -51,11 +51,11 @@ Running: Tripartite Bell
 The counts agree with Table 1.
 
 Rows of Table 1:
-IV, $|Z|=|X|=|Y|=2$ & 2 & 8 & 16 & 12 & 12 & 2 & 4 & 0 & $<0.01$ \\
-IV, $|Z|=3$, $|X|=|Y|=2$ & 2 & 12 & 32 & 28 & 48 & 3 & 36 & 0 & $<0.01$ \\
-IV, $|Z|=4$, $|X|=|Y|=2$ & 2 & 16 & 64 & 60 & 160 & 4 & 144 & 0 & 0.13 \\
-IV, $|Z|=|X|=|Y|=3$ & 2 & 27 & 729 & 333 & 1395 & 3 & 1368 & 0 & 16 \\
-Fig.~\ref{fig:nested-ineq} (right), $\{V_2,V_4\}$ & 2 & 16 & 64 & 40 & 24 & 6 & 8 & 0 & $<0.01$ \\
-$X \rightarrow A \leftarrow U \rightarrow B \leftarrow Y$ & 2 & 16 & 16 & 16 & 24 & 8 & 8 & 0 & $<0.01$ \\
-Fig.~\ref{fig:incomp}, merged $\{V_2,V_4,V_5\}$ & 3 & 32 & 64 & 48 & 1128 & 12 & 1096 & 6 & 0.22 \\
-Tripartite Bell, Fig.~\ref{fig:tripart} & 3 & 64 & 64 & 64 & 53,856 & 38 & 53,792 & 0 & 1123 \\
+IV, $|Z|=|X|=|Y|=2$ & 8 & 16 & 12 & 12 & 2 & 4 & 0 & $<0.01$ & $<0.01$ \\
+IV, $|Z|=3$, $|X|=|Y|=2$ & 12 & 32 & 28 & 48 & 3 & 36 & 0 & $<0.01$ & $<0.01$ \\
+IV, $|Z|=4$, $|X|=|Y|=2$ & 16 & 64 & 60 & 160 & 4 & 144 & 0 & 0.13 & 0.04 \\
+IV, $|Z|=|X|=|Y|=3$ & 27 & 729 & 333 & 1395 & 3 & 1368 & 0 & 16 & 1.6 \\
+Fig.~\ref{fig:nested-ineq} (right), $\{V_2,V_4\}$ & 16 & 64 & 40 & 24 & 6 & 8 & 0 & $<0.01$ & $<0.01$ \\
+$X \rightarrow A \leftarrow U \rightarrow B \leftarrow Y$ & 16 & 16 & 16 & 24 & 8 & 8 & 0 & $<0.01$ & $<0.01$ \\
+Fig.~\ref{fig:incomp}, merged $\{V_2,V_4,V_5\}$ & 32 & 64 & 48 & 1128 & 12 & 1096 & 6 & 0.22 & 0.22 \\
+Tripartite Bell, Fig.~\ref{fig:tripart} & 64 & 64 & 64 & 53,856 & 38 & 53,792 & 0 & 1123 & 26 \\

@@ -92,7 +92,7 @@ Number of districts: 90
  89 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
  90 FALSE FALSE FALSE E1 %-->% M1; E1 %-->% M2; M1 %-->% M2; E1 %-->% M3; M1 %-->% M3; M2 %-->% M3; U %-->% M1 + M2 + M3
 
-Contains a structure of Proposition 7 vs. has inequality constraints:
+Contains a structure of Remark 3 vs. has inequality constraints:
          inequalities
 structure FALSE TRUE
     FALSE    62    0
@@ -116,21 +116,21 @@ saturated FALSE TRUE
     FALSE     0   28
     TRUE     62    0
 
-==== Structures in the examples of Section 4.5 ====
-                 graph district instrumental  bell
-                    IV      X_Y         TRUE FALSE
-         Sequential IV    V2_V3         TRUE FALSE
-         Sequential IV    V4_V5         TRUE FALSE
-            Fig 6 left    V2_V4        FALSE FALSE
-            Fig 6 left       V3        FALSE FALSE
-           Fig 6 right    V2_V4         TRUE FALSE
-           Fig 6 right       V3        FALSE FALSE
- X -> A <- U -> B <- Y      A_B        FALSE  TRUE
-           Verma graph      B_D        FALSE  TRUE
-           Verma graph        C        FALSE FALSE
-       Tripartite Bell V1_V2_V3        FALSE  TRUE
-            Front door      A_Y        FALSE FALSE
-            Front door        M        FALSE FALSE
-             Half Bell      A_B        FALSE FALSE
-          Fig 8 merged V1_V3_V6        FALSE FALSE
-          Fig 8 merged V2_V4_V5         TRUE  TRUE
+==== Structures in the examples of Section 4.3 ====
+                    graph district instrumental  bell
+                       IV      X_Y         TRUE FALSE
+            Sequential IV    V2_V3         TRUE FALSE
+            Sequential IV    V4_V5         TRUE FALSE
+               Fig 5 left    V2_V4        FALSE FALSE
+               Fig 5 left       V3        FALSE FALSE
+              Fig 5 right    V2_V4         TRUE FALSE
+              Fig 5 right       V3        FALSE FALSE
+    X -> A <- U -> B <- Y      A_B        FALSE  TRUE
+              Verma graph      B_D        FALSE  TRUE
+              Verma graph        C        FALSE FALSE
+          Tripartite Bell V1_V2_V3        FALSE  TRUE
+               Front door      A_Y        FALSE FALSE
+               Front door        M        FALSE FALSE
+ Half Bell (not in paper)      A_B        FALSE FALSE
+             Fig 7 merged V1_V3_V6        FALSE FALSE
+             Fig 7 merged V2_V4_V5         TRUE  TRUE

@@ -9,7 +9,7 @@ Proposition 2 applied to the center DAG, U1, D = {X}: TRUE TRUE
 After splitting, both new unobserved vertices have a single child, which leaves the right DAG.
 Conditional independencies of the three DAGs: 0 0 0 
 
-==== Figure 8: the district {V2, V4, V5} ====
+==== Figure 7: the district {V2, V4, V5} ====
   a  b   hlp
  V4 V2 FALSE
  V5 V2 FALSE
@@ -30,7 +30,7 @@ FALSE FALSE
   U1, U3   D = {V4}: cond1 cond2 
 FALSE  TRUE 
 
-==== Section 4.5: half of a Bell scenario, W -> A <- U -> B ====
+==== Half of a Bell scenario (not in the paper), W -> A <- U -> B ====
 Proposition 1 adds B -> A: TRUE 
 MERA constraints on the dhvm: hb 
 The model has districts (unobserved variables marked with [u]:

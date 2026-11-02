@@ -1,5 +1,5 @@
 ## Section 2.3: Propositions 1 (HLP) and 2 (Strong Face Splitting). The Figure 2 example, the
-## Figure 8 district that neither rule can reduce, and the half Bell graph of Section 4.5.
+## Figure 7 district that neither rule can reduce, and the half Bell graph (not in the paper).
 source("common.R")
 
 latents <- function(g) subset(g$nodes_data, latent == TRUE)$name
@@ -40,7 +40,7 @@ cat("After splitting, both new unobserved vertices have a single child, which le
 cat("Conditional independencies of the three DAGs:",
     length(dhvm_list_independences(left)), length(dhvm_list_independences(center)), length(dhvm_list_independences(right)), "\n")
 
-section("Figure 8: the district {V2, V4, V5}")
+section("Figure 7: the district {V2, V4, V5}")
 g <- dhvm(caugi(V1 %-->% V2 + V6, V2 %-->% V3, V3 %-->% V4, V4 %-->% V5, V6 %-->% V3,
                 U1 %-->% V2 + V4, U2 %-->% V1 + V3 + V6, U3 %-->% V4 + V5))
 mem <- c("V2", "V4", "V5")
@@ -59,7 +59,7 @@ for (Us in list("U1", "U3", c("U1", "U3"))) {
   }
 }
 
-section("Section 4.5: half of a Bell scenario, W -> A <- U -> B")
+section("Half of a Bell scenario (not in the paper), W -> A <- U -> B")
 hb <- dhvm(caugi(W %-->% A, U %-->% A + B))
 cat("Proposition 1 adds B -> A:", hlp_applies(hb, "B", "A"), "\n")
 cn <- meraconstraints(hb)

@@ -24,7 +24,7 @@ grid <- function(k) as.list(as.data.frame(t(expand.grid(rep(list(Zs), k)))))
 ## one inequality for each choice of instrument values.
 pearl <- function() do.call(rbind, lapply(0:1, \(d) do.call(rbind, lapply(grid(2), \(z)
   c(1, q(0, d, z[1]) + q(1, d, z[2]))))))
-## (10): q_yd(z) <= inf_w [q_yd(w) + q_00-or-.. ] ... in the form
+## (10), in the form
 ##   d = 1: q_y1(z) <= [q_00(w1) + q_y1(w1)] + [q_10(w2) + q_y1(w2)]
 ##   d = 0: q_y0(z) <= [q_y0(w1) + q_01(w1)] + [q_y0(w2) + q_11(w2)]
 ineq10 <- function(y, d) do.call(rbind, lapply(grid(3), \(z) {

@@ -5,11 +5,11 @@ source("common.R")
 graphs <- list(
   "IV"                    = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y)),
   "Front door"            = dhvm(caugi(A %-->% M %-->% Y, U1 %-->% A + Y)),
-  "Fig 6 left"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V1 %-->% V4, U2 %-->% V2 + V4)),
-  "Fig 6 right"           = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 5 left"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V1 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 5 right"           = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
   "X -> A <- U -> B <- Y" = dhvm(caugi(X %-->% A, Y %-->% B, U %-->% A + B)),
   "Verma graph"           = dhvm(caugi(A %-->% B %-->% C %-->% D, U %-->% B + D)),
-  "Fig 8 merged"          = dhvm_merge_latents(dhvm(caugi(V1 %-->% V2 + V6, V2 %-->% V3, V3 %-->% V4, V4 %-->% V5, V6 %-->% V3,
+  "Fig 7 merged"          = dhvm_merge_latents(dhvm(caugi(V1 %-->% V2 + V6, V2 %-->% V3, V3 %-->% V4, V4 %-->% V5, V6 %-->% V3,
                                                           U1 %-->% V2 + V4, U2 %-->% V1 + V3 + V6, U3 %-->% V4 + V5)))
 )
 d2 <- meraconstraints:::district_levels; ir <- meraconstraints:::indicator_rows
@@ -80,7 +80,7 @@ cat("Nontrivial by Proposition 6, as returned:", sum(cn$nontrivial[[1]][!eq]),
 
 ## ---- linear programming check of Proposition 6(ii) ------------------------------------
 section("Maximizing each inequality over the simplices and the equality constraints")
-for (nm in setdiff(names(graphs), "Fig 8 merged")) {
+for (nm in setdiff(names(graphs), "Fig 7 merged")) {
   cn <- meraconstraints(graphs[[nm]])
   agree <- sapply(seq_along(cn$polytope$Hrep), \(j) {
     H <- cn$polytope$Hrep[[j]]; eq <- H[, 1] == 1

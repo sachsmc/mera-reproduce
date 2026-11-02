@@ -1,4 +1,4 @@
-## Section 4.4, Table 1: size, constraint counts and computation times.
+## Section 6, Table 1: size, constraint counts and computation times.
 ## Usage: Rscript 10-benchmarks.R [--redundancy] [names of cases to skip]
 ## e.g.   Rscript 10-benchmarks.R "Tripartite Bell"
 ##
@@ -12,8 +12,8 @@
 ## The counts do not depend on the computer, and the script stops if they differ from the
 ## counts in the paper. The times do.
 ##
-## --redundancy also runs rcdd::redundant, as reported under "Redundancy" in Section 7. It is
-## slow, about 4 hours for Figure 8 and 7.5 hours for the ternary IV model, and is not run
+## --redundancy also runs rcdd::redundant, as reported in the response letter. It is
+## slow, about 4 hours for Figure 7 and 7.5 hours for the ternary IV model, and is not run
 ## for the tripartite Bell graph.
 source("common.R")
 
@@ -27,9 +27,9 @@ graphs <- list(
   "IV, |Z|=3, |X|=|Y|=2"   = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y), nvals = c(Z = 3)),
   "IV, |Z|=4, |X|=|Y|=2"   = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y), nvals = c(Z = 4)),
   "IV, |Z|=|X|=|Y|=3"      = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y), nvals = c(Z = 3, X = 3, Y = 3)),
-  "Fig 6 right"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 5 right"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
   "X -> A <- U -> B <- Y"  = dhvm(caugi(X %-->% A, Y %-->% B, U %-->% A + B)),
-  "Fig 8 merged"           = dhvm_merge_latents(dhvm(caugi(V1 %-->% V2 + V6, V2 %-->% V3, V3 %-->% V4, V4 %-->% V5, V6 %-->% V3,
+  "Fig 7 merged"           = dhvm_merge_latents(dhvm(caugi(V1 %-->% V2 + V6, V2 %-->% V3, V3 %-->% V4, V4 %-->% V5, V6 %-->% V3,
                                                            U1 %-->% V2 + V4, U2 %-->% V1 + V3 + V6, U3 %-->% V4 + V5))),
   "Tripartite Bell"        = dhvm(caugi(X %-->% V1, Y %-->% V2, Z %-->% V3, U %-->% V1 + V2 + V3))
 )
@@ -44,9 +44,9 @@ paper <- list(
   "IV, |Z|=3, |X|=|Y|=2"  = list("IV, $|Z|=3$, $|X|=|Y|=2$", c(12, 32, 28, 48, 3, 36, 0)),
   "IV, |Z|=4, |X|=|Y|=2"  = list("IV, $|Z|=4$, $|X|=|Y|=2$", c(16, 64, 60, 160, 4, 144, 0)),
   "IV, |Z|=|X|=|Y|=3"     = list("IV, $|Z|=|X|=|Y|=3$", c(27, 729, 333, 1395, 3, 1368, 0)),
-  "Fig 6 right"           = list("Fig.~\\ref{fig:nested-ineq} (right), $\\{V_2,V_4\\}$", c(16, 64, 40, 24, 6, 8, 0)),
+  "Fig 5 right"           = list("Fig.~\\ref{fig:nested-ineq} (right), $\\{V_2,V_4\\}$", c(16, 64, 40, 24, 6, 8, 0)),
   "X -> A <- U -> B <- Y" = list("$X \\rightarrow A \\leftarrow U \\rightarrow B \\leftarrow Y$", c(16, 16, 16, 24, 8, 8, 0)),
-  "Fig 8 merged"          = list("Fig.~\\ref{fig:incomp}, merged $\\{V_2,V_4,V_5\\}$", c(32, 64, 48, 1128, 12, 1096, 6)),
+  "Fig 7 merged"          = list("Fig.~\\ref{fig:incomp}, merged $\\{V_2,V_4,V_5\\}$", c(32, 64, 48, 1128, 12, 1096, 6)),
   "Tripartite Bell"       = list("Tripartite Bell, Fig.~\\ref{fig:tripart}", c(64, 64, 64, 53856, 38, 53792, 0))
 )
 
@@ -63,6 +63,7 @@ cpu_ram <- function() {
       "(Get-CimInstance Win32_Processor).Name; (Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory"))
   }
 }
+loadNamespace("rcdd")                        # so that sessionInfo() records its version
 writeLines(c(format(Sys.time(), "%Y-%m-%d %H:%M %Z"), unname(Sys.info()[c("sysname", "release", "machine")]),
              cpu_ram(), paste("Cores:", parallel::detectCores()), "", capture.output(sessionInfo())),
            paste0("table1-machine", stem, ".txt"))
@@ -105,8 +106,8 @@ for (nm in names(graphs)) {
   counts <- unlist(r[c("rows_B", "cols_B_all", "cols_B_distinct", "n_ineq", "n_eq", "n_nontrivial_ineq", "n_nontrivial_eq")])
   if (!all(counts == paper[[nm]][[2]]))
     stop("The counts for ", nm, " differ from Table 1: ", paste(counts, collapse = " "))
-  tex <- c(tex, paste0(paste(c(paper[[nm]][[1]], r$members, r$rows_B, r$cols_B_all, r$cols_B_distinct, big(r$n_ineq), r$n_eq,
-                               big(r$n_nontrivial_ineq), r$n_nontrivial_eq, format_time(t_vh)), collapse = " & "), " \\\\"))
+  tex <- c(tex, paste0(paste(c(paper[[nm]][[1]], r$rows_B, r$cols_B_all, r$cols_B_distinct, big(r$n_ineq), r$n_eq,
+                               big(r$n_nontrivial_ineq), r$n_nontrivial_eq, format_time(t_vh), format_time(t_sc)), collapse = " & "), " \\\\"))
   all_res <- do.call(rbind, res)
   write.csv(all_res, paste0("table1-benchmarks", stem, ".csv"), row.names = FALSE)
   writeLines(tex, paste0("table1-rows", stem, ".tex"))

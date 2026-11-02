@@ -1,16 +1,16 @@
-## Section 4.5, Proposition 7 and the conjecture after it: exhaustive check of the graphical
+## Section 4.3, Remark 3 and its converse (not claimed in the paper): exhaustive check of the graphical
 ## criterion for when a c-degree 1 district has inequality constraints. Districts: members
 ## M1..Mk sharing one latent U, with exogenous binary external parents E1..Em. For each
 ## graph, compare
 ##   (a) whether the district contains an instrumental-type or Bell-type structure
-##       (Proposition 7), with
+##       (Remark 3), with
 ##   (b) whether the district polytope has inequality constraints beyond the probability
 ##       constraints and its own equality constraints (exact polytope comparison).
 ## As cross-checks, also compare (b) with Proposition 6(ii), and with whether the district
 ## is "saturated" after adding HLP edges. The last part classifies the examples in the paper.
 source("common.R")
 
-## ---- structures of Proposition 7 ----------------------------------------------------
+## ---- structures of Remark 3 ----------------------------------------------------
 ## pa: named list of parent sets of the members; ext: the external parents.
 ## All directed paths from W through members.
 member_paths <- function(pa, W, members) {
@@ -133,7 +133,7 @@ for (i in seq_along(cases)) {
 }
 res <- do.call(rbind, results)
 res$structure <- res$instrumental | res$bell
-cat("\nContains a structure of Proposition 7 vs. has inequality constraints:\n")
+cat("\nContains a structure of Remark 3 vs. has inequality constraints:\n")
 print(table(structure = res$structure, inequalities = res$inequalities, useNA = "ifany"))
 cat("\nType of structure, among the districts with inequality constraints:\n")
 print(table(instrumental = res$instrumental[res$inequalities], bell = res$bell[res$inequalities]))
@@ -143,19 +143,19 @@ cat("\nSaturated after adding HLP edges vs. has inequality constraints:\n")
 print(table(saturated = res$saturated, inequalities = res$inequalities, useNA = "ifany"))
 write.csv(res, "inequality-criterion-results.csv", row.names = FALSE)
 
-## ---- the examples of Section 4.5 ---------------------------------------------------
-section("Structures in the examples of Section 4.5")
+## ---- the examples of Section 4.3 ---------------------------------------------------
+section("Structures in the examples of Section 4.3")
 examples <- list(
   "IV"                    = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y)),
   "Sequential IV"         = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4 %-->% V5, U2 %-->% V2 + V3, U3 %-->% V4 + V5)),
-  "Fig 6 left"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V1 %-->% V4, U2 %-->% V2 + V4)),
-  "Fig 6 right"           = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 5 left"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V1 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 5 right"           = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
   "X -> A <- U -> B <- Y" = dhvm(caugi(X %-->% A, Y %-->% B, U %-->% A + B)),
   "Verma graph"           = dhvm(caugi(A %-->% B %-->% C %-->% D, U %-->% B + D)),
   "Tripartite Bell"       = dhvm(caugi(X %-->% V1, Y %-->% V2, Z %-->% V3, U %-->% V1 + V2 + V3)),
   "Front door"            = dhvm(caugi(A %-->% M %-->% Y, U1 %-->% A + Y)),
-  "Half Bell"             = dhvm(caugi(W %-->% A, U %-->% A + B)),
-  "Fig 8 merged"          = dhvm_merge_latents(dhvm(caugi(V1 %-->% V2 + V6, V2 %-->% V3, V3 %-->% V4, V4 %-->% V5, V6 %-->% V3,
+  "Half Bell (not in paper)" = dhvm(caugi(W %-->% A, U %-->% A + B)),
+  "Fig 7 merged"          = dhvm_merge_latents(dhvm(caugi(V1 %-->% V2 + V6, V2 %-->% V3, V3 %-->% V4, V4 %-->% V5, V6 %-->% V3,
                                                           U1 %-->% V2 + V4, U2 %-->% V1 + V3 + V6, U3 %-->% V4 + V5)))
 )
 tab <- do.call(rbind, lapply(names(examples), \(nm) {

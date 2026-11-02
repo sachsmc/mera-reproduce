@@ -6,15 +6,15 @@ package 'data.table' was built under R version 4.4.3
                     IV      X_Y   12               4  2             0       2
             Front door      A_Y    8               0  3             0       3
             Front door        M    4               0  2             0       2
-            Fig 6 left    V2_V4   16               0  6             0       6
-            Fig 6 left       V3    4               0  2             0       2
-           Fig 6 right    V2_V4   24               8  6             0       6
-           Fig 6 right       V3    4               0  2             0       2
+            Fig 5 left    V2_V4   16               0  6             0       6
+            Fig 5 left       V3    4               0  2             0       2
+           Fig 5 right    V2_V4   24               8  6             0       6
+           Fig 5 right       V3    4               0  2             0       2
  X -> A <- U -> B <- Y      A_B   24               8  8             0       8
            Verma graph      B_D   24               8  8             2       6
            Verma graph        C    4               0  2             0       2
-          Fig 8 merged V1_V3_V6   16               0  5             0       5
-          Fig 8 merged V2_V4_V5 1128            1096 12             6       6
+          Fig 7 merged V1_V3_V6   16               0  5             0       5
+          Fig 7 merged V2_V4_V5 1128            1096 12             6       6
  rank_He rank_NOM closed_in_district_only
        2        2                        
        3        3                       Y
@@ -42,7 +42,7 @@ Nontrivial by Proposition 6, as returned: 8   rewritten: 8
 ==== Maximizing each inequality over the simplices and the equality constraints ====
 IV                       agrees in every district: TRUE
 Front door               agrees in every district: TRUE
-Fig 6 left               agrees in every district: TRUE
-Fig 6 right              agrees in every district: TRUE
+Fig 5 left               agrees in every district: TRUE
+Fig 5 right              agrees in every district: TRUE
 X -> A <- U -> B <- Y    agrees in every district: TRUE
 Verma graph              agrees in every district: TRUE

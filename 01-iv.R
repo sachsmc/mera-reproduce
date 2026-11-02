@@ -1,4 +1,4 @@
-## Section 3 and Appendix C: the instrumental variable model (Figure 4).
+## Section 3 and Appendix B: the instrumental variable model (Figure 4).
 source("common.R")
 
 iv <- dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y))
@@ -30,4 +30,4 @@ keep <- !is.na(k)
 print(data.frame(row = which(keep), entry_levels(cn, 1)[k[keep], c("X", "Y", "Z")], row.names = NULL))
 
 section("The code in Section 6")
-print(hrep_test(H, c(0.101, 0.338, 0.013, 0.548, 0.317, 0.51, 0.004, 0.168), which = TRUE))
+print(hrep_test(H, c(0.101, 0.338, 0.013, 0.548, 0.317, 0.51, 0.004, 0.169), which = TRUE))

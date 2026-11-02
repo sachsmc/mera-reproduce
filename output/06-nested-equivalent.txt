@@ -50,7 +50,7 @@ v2 = 0, v3 = 1, v4 = 0  <-  P*(V2 = 0,V4 = 0|V1 = 1,V3 = 0) + P*(V2 = 0,V4 = 1|V
 
 Largest left side of these inequalities over the vertices, right graph: 1   left graph: 2 
 
-==== Example in the paper: V2 = 0 with probability 0.9, V4 = V1 with probability 0.9 ====
+==== Example: V2 = 0 with probability 0.9, V4 = V1 with probability 0.9 ====
 All constraints of the left graph hold: TRUE 
 Rows of the right graph violated: 2 
 v2 = 0, v3 = 0, v4 = 0 v2 = 0, v3 = 0, v4 = 1 v2 = 1, v3 = 0, v4 = 0 
