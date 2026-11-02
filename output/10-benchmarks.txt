@@ -1,30 +1,61 @@
 Running: IV, |Z|=|X|=|Y|=2 
+  V-to-H: 0.003 s  nontrivial screen: 0.004 s
 Running: IV, |Z|=3, |X|=|Y|=2 
+  V-to-H: 0.01 s  nontrivial screen: 0.008 s
 Running: IV, |Z|=4, |X|=|Y|=2 
+  V-to-H: 0.13 s  nontrivial screen: 0.039 s
 Running: IV, |Z|=|X|=|Y|=3 
-Running: Fig 5 right 
+  V-to-H: 15.888 s  nontrivial screen: 1.617 s
+Running: Fig 6 right 
+  V-to-H: 0.008 s  nontrivial screen: 0.005 s
 Running: X -> A <- U -> B <- Y 
-Running: Fig 7 merged 
+  V-to-H: 0.002 s  nontrivial screen: 0.003 s
+Running: Fig 8 merged 
+  V-to-H: 0.224 s  nontrivial screen: 0.219 s
 Running: Tripartite Bell 
-                         graph district rows_B cols_B n_ineq n_eq
-elapsed      IV, |Z|=|X|=|Y|=2        1      8     12     12    2
-elapsed1  IV, |Z|=3, |X|=|Y|=2        1     12     28     48    3
-elapsed2  IV, |Z|=4, |X|=|Y|=2        1     16     60    160    4
-elapsed3     IV, |Z|=|X|=|Y|=3        1     27    333   1395    3
-elapsed4           Fig 5 right        1     16     40     24    6
-elapsed5           Fig 5 right        2      4      4      4    2
-elapsed6 X -> A <- U -> B <- Y        1     16     16     24    8
-elapsed7          Fig 7 merged        1     16     16     16    5
-elapsed8          Fig 7 merged        2     32     48   1128   12
-elapsed9       Tripartite Bell        1     64     64  53856   38
-         n_redundant_removed n_flagged sec_VtoH sec_irredundant sec_screen
-elapsed                   NA         4    0.004              NA      0.000
-elapsed1                  NA        36    0.005              NA      0.000
-elapsed2                  NA       144    0.073              NA      0.001
-elapsed3                  NA      1368   12.353              NA      0.009
-elapsed4                  NA        16    0.007              NA      0.001
-elapsed5                  NA         0    0.007              NA      0.001
-elapsed6                  NA        22    0.002              NA      0.001
-elapsed7                  NA         8    0.220              NA      0.010
-elapsed8                  NA      1118    0.220              NA      0.010
-elapsed9                  NA     53866 1082.539              NA      1.200
+  V-to-H: 1123.319 s  nontrivial screen: 25.829 s
+                 graph district members rows_B cols_B_all cols_B_distinct
+     IV, |Z|=|X|=|Y|=2      X_Y       2      8         16              12
+  IV, |Z|=3, |X|=|Y|=2      X_Y       2     12         32              28
+  IV, |Z|=4, |X|=|Y|=2      X_Y       2     16         64              60
+     IV, |Z|=|X|=|Y|=3      X_Y       2     27        729             333
+           Fig 6 right    V2_V4       2     16         64              40
+           Fig 6 right       V3       1      4          4               4
+ X -> A <- U -> B <- Y      A_B       2     16         16              16
+          Fig 8 merged V1_V3_V6       3     16        128              16
+          Fig 8 merged V2_V4_V5       3     32         64              48
+       Tripartite Bell V1_V2_V3       3     64         64              64
+ n_ineq n_eq n_nontrivial_ineq n_nontrivial_eq n_redundant_removed sec_VtoH
+     12    2                 4               0                  NA    0.003
+     48    3                36               0                  NA    0.010
+    160    4               144               0                  NA    0.130
+   1395    3              1368               0                  NA   15.888
+     24    6                 8               0                  NA    0.008
+      4    2                 0               0                  NA    0.008
+     24    8                 8               0                  NA    0.002
+     16    5                 0               0                  NA    0.224
+   1128   12              1096               6                  NA    0.224
+  53856   38             53792               0                  NA 1123.319
+ sec_screen sec_irredundant
+      0.004              NA
+      0.008              NA
+      0.039              NA
+      1.617              NA
+      0.005              NA
+      0.005              NA
+      0.003              NA
+      0.219              NA
+      0.219              NA
+     25.829              NA
+
+The counts agree with Table 1.
+
+Rows of Table 1:
+IV, $|Z|=|X|=|Y|=2$ & 2 & 8 & 16 & 12 & 12 & 2 & 4 & 0 & $<0.01$ \\
+IV, $|Z|=3$, $|X|=|Y|=2$ & 2 & 12 & 32 & 28 & 48 & 3 & 36 & 0 & $<0.01$ \\
+IV, $|Z|=4$, $|X|=|Y|=2$ & 2 & 16 & 64 & 60 & 160 & 4 & 144 & 0 & 0.13 \\
+IV, $|Z|=|X|=|Y|=3$ & 2 & 27 & 729 & 333 & 1395 & 3 & 1368 & 0 & 16 \\
+Fig.~\ref{fig:nested-ineq} (right), $\{V_2,V_4\}$ & 2 & 16 & 64 & 40 & 24 & 6 & 8 & 0 & $<0.01$ \\
+$X \rightarrow A \leftarrow U \rightarrow B \leftarrow Y$ & 2 & 16 & 16 & 16 & 24 & 8 & 8 & 0 & $<0.01$ \\
+Fig.~\ref{fig:incomp}, merged $\{V_2,V_4,V_5\}$ & 3 & 32 & 64 & 48 & 1128 & 12 & 1096 & 6 & 0.22 \\
+Tripartite Bell, Fig.~\ref{fig:tripart} & 3 & 64 & 64 & 64 & 53,856 & 38 & 53,792 & 0 & 1123 \\
