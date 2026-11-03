@@ -1,4 +1,4 @@
-## Section 4.2: the tripartite Bell graph (Figure 6). This takes up to about half an hour.
+## Section 4.2: the tripartite Bell graph (Figure 5). This takes up to about half an hour.
 source("common.R")
 
 bell <- dhvm(caugi(X %-->% V1, Y %-->% V2, Z %-->% V3, U %-->% V1 + V2 + V3))

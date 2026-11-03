@@ -104,9 +104,9 @@ instrumental FALSE TRUE
        FALSE     0    2
        TRUE     26    0
 
-Proposition 6(ii) vs. has inequality constraints:
+Proposition 4(ii) vs. has inequality constraints:
             inequalities
-proposition6 FALSE TRUE
+proposition4 FALSE TRUE
        FALSE    62    0
        TRUE      0   28
 
@@ -121,10 +121,10 @@ saturated FALSE TRUE
                        IV      X_Y         TRUE FALSE
             Sequential IV    V2_V3         TRUE FALSE
             Sequential IV    V4_V5         TRUE FALSE
-               Fig 5 left    V2_V4        FALSE FALSE
-               Fig 5 left       V3        FALSE FALSE
-              Fig 5 right    V2_V4         TRUE FALSE
-              Fig 5 right       V3        FALSE FALSE
+               Fig 4 left    V2_V4        FALSE FALSE
+               Fig 4 left       V3        FALSE FALSE
+              Fig 4 right    V2_V4         TRUE FALSE
+              Fig 4 right       V3        FALSE FALSE
     X -> A <- U -> B <- Y      A_B        FALSE  TRUE
               Verma graph      B_D        FALSE  TRUE
               Verma graph        C        FALSE FALSE

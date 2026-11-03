@@ -58,24 +58,24 @@ run, in the column `n_redundant_removed`.
 
 | Script | Paper section | What it reproduces |
 |---|---|---|
-| `01-iv.R` | 3, Appendix B | Matrix **B**, H-representation and the nontrivial constraints of the IV model (Figure 4) |
-| `02-referee-example.R` | 2.5 (supporting check) | The example in Reviewer 1's first comment, for Proposition 3: dropping the external parent Z gives 13/40 and 7/20 instead of 1/3 |
+| `01-iv.R` | 3, Supplementary Materials C | Matrix **B**, H-representation and the nontrivial constraints of the IV model (Figure 3) |
+| `02-referee-example.R` | 2.4 (supporting check) | The example in Reviewer 1's first comment, for Proposition 1: dropping the external parent Z gives 13/40 and 7/20 instead of 1/3 |
 | `03-front-door.R` | 3.3 | The front door model has no nontrivial constraints |
-| `04-sequential-iv.R` | 3.3 | Conditional independencies and the two sets of instrumental inequalities (Figure 3) |
+| `04-sequential-iv.R` | 3.3 | Conditional independencies and the two sets of instrumental inequalities (Figure 2) |
 | `05-districts-cdegree.R` | 2.2 | Districts and c-degrees of the graph in Figure 1 |
-| `06-nested-equivalent.R` | 4.1 | The 8 inequality constraints that distinguish the two graphs of Figure 5, their form in the paper, and an example distribution (about a minute) |
+| `06-nested-equivalent.R` | 4.1 | The 8 inequality constraints that distinguish the two graphs of Figure 4, their form in the paper, and an example distribution (about a minute) |
 | `07-merged-latents.R` | 5 | Constraints after merging latents in Figure 7, the Verma-type constraint, the example distribution that violates 13 inequality constraints, and the classes of the 1096 nontrivial inequalities |
 | `08-triangle.R` | 5 | The merged triangle scenario has no nontrivial constraints |
-| `09-tripartite-bell.R` | 4.2 | Constraint counts and the displayed inequality for the tripartite Bell graph (Figure 6); takes up to about 30 minutes |
+| `09-tripartite-bell.R` | 4.2 | Constraint counts and the displayed inequality for the tripartite Bell graph (Figure 5); takes up to about 30 minutes |
 | `10-benchmarks.R` | 6, Table 1 | Matrix sizes, constraint counts and times; see above |
 | `11-kedagni-mourifie.R` | 7 (supporting check) | Exact comparison with the inequalities of Kedagni and Mourifie (2020) for binary treatment and outcome |
 | `12-pearl-bonet-insufficient.R` | 1 (supporting check) | A distribution satisfying Pearl's inequalities that is incompatible with the IV model (ternary instrument) |
 | `13-inequality-criterion.R` | 4.3 | Remark 3, and a supporting check of its converse, which the paper does not claim: for 90 small districts, inequality constraints exist exactly when the district contains one of the two structures. Also classifies the examples of Section 4.3 |
-| `14-nontrivial-criterion.R` | 3.3 | Proposition 6: counts, the relation to the nested Markov model, the example row, invariance to how rows are written, and a linear programming check |
+| `14-nontrivial-criterion.R` | 3.3 | Proposition 4: counts, the relation to the nested Markov model, the example row, invariance to how rows are written, and a linear programming check |
 | `15-zero-probabilities.R` | 3.2, Remark 2 | The rule for zero probabilities, including the Verma graph with C = B |
-| `16-transformations.R` | 2.3 | Propositions 1 and 2: the example of Figure 2 and the district of Figure 7 that neither can reduce |
+| `16-transformations.R` | 5.1 | Propositions 5 and 6: the example of Figure 6 and the district of Figure 7 that neither can reduce |
 
-`common.R` holds shared setup. The criterion of Proposition 6 is `nontrivial_screen()` in
+`common.R` holds shared setup. The criterion of Proposition 4 is `nontrivial_screen()` in
 `meraconstraints`, and `meraconstraints()` stores its result in the element `nontrivial`.
 `inequality-criterion-results.csv` holds the results of `13-inequality-criterion.R`.
 

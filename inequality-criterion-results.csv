@@ -1,4 +1,4 @@
-"graph","instrumental","bell","saturated","inequalities","proposition6","structure"
+"graph","instrumental","bell","saturated","inequalities","proposition4","structure"
 "U %-->% M1 + M2",FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
 "M1 %-->% M2; U %-->% M1 + M2",FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
 "E1 %-->% M1; U %-->% M1 + M2",FALSE,FALSE,TRUE,FALSE,FALSE,FALSE

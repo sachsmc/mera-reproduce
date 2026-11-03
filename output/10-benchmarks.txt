@@ -6,7 +6,7 @@ Running: IV, |Z|=4, |X|=|Y|=2
   V-to-H: 0.13 s  nontrivial screen: 0.039 s
 Running: IV, |Z|=|X|=|Y|=3 
   V-to-H: 15.888 s  nontrivial screen: 1.617 s
-Running: Fig 5 right 
+Running: Fig 4 right 
   V-to-H: 0.008 s  nontrivial screen: 0.005 s
 Running: X -> A <- U -> B <- Y 
   V-to-H: 0.002 s  nontrivial screen: 0.003 s
@@ -19,8 +19,8 @@ Running: Tripartite Bell
   IV, |Z|=3, |X|=|Y|=2      X_Y       2     12         32              28
   IV, |Z|=4, |X|=|Y|=2      X_Y       2     16         64              60
      IV, |Z|=|X|=|Y|=3      X_Y       2     27        729             333
-           Fig 5 right    V2_V4       2     16         64              40
-           Fig 5 right       V3       1      4          4               4
+           Fig 4 right    V2_V4       2     16         64              40
+           Fig 4 right       V3       1      4          4               4
  X -> A <- U -> B <- Y      A_B       2     16         16              16
           Fig 7 merged V1_V3_V6       3     16        128              16
           Fig 7 merged V2_V4_V5       3     32         64              48

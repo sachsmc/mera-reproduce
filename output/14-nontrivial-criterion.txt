@@ -6,10 +6,10 @@ package 'data.table' was built under R version 4.4.3
                     IV      X_Y   12               4  2             0       2
             Front door      A_Y    8               0  3             0       3
             Front door        M    4               0  2             0       2
-            Fig 5 left    V2_V4   16               0  6             0       6
-            Fig 5 left       V3    4               0  2             0       2
-           Fig 5 right    V2_V4   24               8  6             0       6
-           Fig 5 right       V3    4               0  2             0       2
+            Fig 4 left    V2_V4   16               0  6             0       6
+            Fig 4 left       V3    4               0  2             0       2
+           Fig 4 right    V2_V4   24               8  6             0       6
+           Fig 4 right       V3    4               0  2             0       2
  X -> A <- U -> B <- Y      A_B   24               8  8             0       8
            Verma graph      B_D   24               8  8             2       6
            Verma graph        C    4               0  2             0       2
@@ -37,12 +37,12 @@ Equal to p(01 | 11) >= 0 after adding equality constraints: TRUE
 
 ==== Adding random combinations of the equality rows to the inequality rows ====
 Inequalities flagged by the simplex screen, as returned: 15   rewritten: 24 
-Nontrivial by Proposition 6, as returned: 8   rewritten: 8 
+Nontrivial by Proposition 4, as returned: 8   rewritten: 8 
 
 ==== Maximizing each inequality over the simplices and the equality constraints ====
 IV                       agrees in every district: TRUE
 Front door               agrees in every district: TRUE
-Fig 5 left               agrees in every district: TRUE
-Fig 5 right              agrees in every district: TRUE
+Fig 4 left               agrees in every district: TRUE
+Fig 4 right              agrees in every district: TRUE
 X -> A <- U -> B <- Y    agrees in every district: TRUE
 Verma graph              agrees in every district: TRUE

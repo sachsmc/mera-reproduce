@@ -10,7 +10,7 @@ if (!"nontrivial_screen" %in% getNamespaceExports("meraconstraints"))
        "Install the current master branch of https://github.com/sachsmc/meraconstraints.")
 
 ## Text of the constraints of district j, optionally only the nontrivial ones
-## (Proposition 6), in terms of observed (star = FALSE) or interventional (star = TRUE)
+## (Proposition 4), in terms of observed (star = FALSE) or interventional (star = TRUE)
 ## probabilities.
 constraint_text <- function(cn, j = 1, nontrivial_only = TRUE, star = FALSE) {
   H    <- cn$polytope$Hrep[[j]]
@@ -39,7 +39,7 @@ as_entries <- function(cn, j, tab, value) {
 }
 
 ## For each inequality row of district j, the entry p_k that is zero at every vertex on its
-## facet, or NA if there is none. By Proposition 6(ii), the row is then the nonnegativity
+## facet, or NA if there is none. By Proposition 4(ii), the row is then the nonnegativity
 ## constraint p_k >= 0 in a different form, and NA means that the row is nontrivial.
 nonnegativity_entries <- function(cn, j = 1) {
   H  <- cn$polytope$Hrep[[j]]

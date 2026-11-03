@@ -1,12 +1,12 @@
-## Section 3.3, Proposition 6: which constraints are nontrivial, its relation to the nested
+## Section 3.3, Proposition 4: which constraints are nontrivial, its relation to the nested
 ## Markov model, and why the equality constraints must be used.
 source("common.R")
 
 graphs <- list(
   "IV"                    = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y)),
   "Front door"            = dhvm(caugi(A %-->% M %-->% Y, U1 %-->% A + Y)),
-  "Fig 5 left"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V1 %-->% V4, U2 %-->% V2 + V4)),
-  "Fig 5 right"           = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 4 left"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V1 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 4 right"           = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
   "X -> A <- U -> B <- Y" = dhvm(caugi(X %-->% A, Y %-->% B, U %-->% A + B)),
   "Verma graph"           = dhvm(caugi(A %-->% B %-->% C %-->% D, U %-->% B + D)),
   "Fig 7 merged"          = dhvm_merge_latents(dhvm(caugi(V1 %-->% V2 + V6, V2 %-->% V3, V3 %-->% V4, V4 %-->% V5, V6 %-->% V3,
@@ -17,7 +17,7 @@ cs <- meraconstraints:::closed_member_sets; mr <- meraconstraints:::margin_rows
 rk <- function(m) if (is.null(m) || !nrow(m)) 0L else qr(m)$rank
 
 ## ---- counts, and the margin equations of the sets closed in the district ------------
-## N and O are the equations of Proposition 6. M adds the sets that are closed in the
+## N and O are the equations of Proposition 4. M adds the sets that are closed in the
 ## district (they contain every member that is a parent of a member) but not closed.
 section("Counts by district, and the equations that span the equality constraints")
 rows <- list()
@@ -37,7 +37,7 @@ for (nm in names(graphs)) {
     O <- do.call(rbind, lapply(closed, mr, lev = lev, ext = ext, ext_pa = ext_pa))
     M <- do.call(rbind, lapply(extra, mr, lev = lev, ext = ext, ext_pa = ext_pa))
     E <- -H[H[, 1] == 1, -(1:2), drop = FALSE]
-    ## Proposition 6(ii): trivial inequalities are exactly the nonnegativity constraints
+    ## Proposition 4(ii): trivial inequalities are exactly the nonnegativity constraints
     k <- nonnegativity_entries(cn, j)
     stopifnot(identical(is.na(k), unname(f[H[, 1] == 0])), length(unique(k[!is.na(k)])) == sum(!is.na(k)))
     rows[[length(rows) + 1]] <- data.frame(graph = nm, district = names(cn$polytope$Hrep)[j],
@@ -65,7 +65,7 @@ E <- H[H[, 1] == 1, -1, drop = FALSE]
 cat("Equal to p(01 | 11) >= 0 after adding equality constraints:",
     qr(rbind(E, c(0, h + p(0, 1, 1, 1))))$rank == qr(E)$rank, "\n")
 
-## ---- invariance: rewriting rows changes the old screen, not Proposition 6 -------------
+## ---- invariance: rewriting rows changes the old screen, not Proposition 4 -------------
 section("Adding random combinations of the equality rows to the inequality rows")
 set.seed(1)
 rel  <- cn$functional_relations; tope <- cn$polytope
@@ -75,10 +75,10 @@ H2[!eq, -1] <- H[!eq, -1] + matrix(sample(-2:2, sum(!eq) * sum(eq), TRUE), sum(!
 tope2 <- tope; tope2$Hrep[[1]] <- H2; tope2$HrepQ[[1]] <- rcdd::d2q(H2)
 cat("Inequalities flagged by the simplex screen, as returned:", sum(prob_simplex_screen(rel, tope$Hrep)[[1]][!eq]),
     "  rewritten:", sum(prob_simplex_screen(rel, tope2$Hrep)[[1]][!eq]), "\n")
-cat("Nontrivial by Proposition 6, as returned:", sum(cn$nontrivial[[1]][!eq]),
+cat("Nontrivial by Proposition 4, as returned:", sum(cn$nontrivial[[1]][!eq]),
     "  rewritten:", sum(nontrivial_screen(g, rel, tope2)[[1]][!eq]), "\n")
 
-## ---- linear programming check of Proposition 6(ii) ------------------------------------
+## ---- linear programming check of Proposition 4(ii) ------------------------------------
 section("Maximizing each inequality over the simplices and the equality constraints")
 for (nm in setdiff(names(graphs), "Fig 7 merged")) {
   cn <- meraconstraints(graphs[[nm]])

@@ -1,4 +1,4 @@
-## Section 3.3: sequential instrumental variables (Figure 3).
+## Section 3.3: sequential instrumental variables (Figure 2).
 source("common.R")
 
 sq <- dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4 %-->% V5, U2 %-->% V2 + V3, U3 %-->% V4 + V5))

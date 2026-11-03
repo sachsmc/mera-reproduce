@@ -1,4 +1,4 @@
-## Section 3 and Appendix B: the instrumental variable model (Figure 4).
+## Section 3 and Supplementary Materials, Section C: the instrumental variable model (Figure 3).
 source("common.R")
 
 iv <- dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y))
@@ -18,7 +18,7 @@ print(cn$polytope$Hrep[[1]])
 section("All constraints, in terms of observed probabilities")
 cat(constraint_text(cn, 1, nontrivial_only = FALSE), sep = "\n")
 
-section("Nontrivial rows of H_i (Proposition 6)")
+section("Nontrivial rows of H_i (Proposition 4)")
 H  <- cn$polytope$Hrep[[1]]
 Hi <- which(H[, 1] == 0)
 cat("Rows of H_i:", which(cn$nontrivial[[1]][Hi]), "\n")

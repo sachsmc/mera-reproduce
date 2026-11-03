@@ -72,7 +72,7 @@ P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) + P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) + P(X = 
 -P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) - P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) - P(X = 0|Z = 0)P(Y = 1|X = 0,Z = 0) - P(X = 1|Z = 0)P(Y = 1|X = 1,Z = 0)  =  -1
 -P(X = 0|Z = 1)P(Y = 0|X = 0,Z = 1) - P(X = 1|Z = 1)P(Y = 0|X = 1,Z = 1) - P(X = 0|Z = 1)P(Y = 1|X = 0,Z = 1) - P(X = 1|Z = 1)P(Y = 1|X = 1,Z = 1)  =  -1
 
-==== Nontrivial rows of H_i (Proposition 6) ====
+==== Nontrivial rows of H_i (Proposition 4) ====
 Rows of H_i: 2 3 5 6 
 -P(X = 0|Z = 0)P(Y = 0|X = 0,Z = 0) - P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) - P(X = 0|Z = 0)P(Y = 1|X = 0,Z = 0) + P(X = 1|Z = 1)P(Y = 0|X = 1,Z = 1) <= 0
 P(X = 1|Z = 0)P(Y = 0|X = 1,Z = 0) - P(X = 0|Z = 1)P(Y = 0|X = 0,Z = 1) - P(X = 1|Z = 1)P(Y = 0|X = 1,Z = 1) - P(X = 0|Z = 1)P(Y = 1|X = 0,Z = 1) <= 0

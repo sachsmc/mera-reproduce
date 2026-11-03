@@ -27,7 +27,7 @@ graphs <- list(
   "IV, |Z|=3, |X|=|Y|=2"   = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y), nvals = c(Z = 3)),
   "IV, |Z|=4, |X|=|Y|=2"   = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y), nvals = c(Z = 4)),
   "IV, |Z|=|X|=|Y|=3"      = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y), nvals = c(Z = 3, X = 3, Y = 3)),
-  "Fig 5 right"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 4 right"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
   "X -> A <- U -> B <- Y"  = dhvm(caugi(X %-->% A, Y %-->% B, U %-->% A + B)),
   "Fig 7 merged"           = dhvm_merge_latents(dhvm(caugi(V1 %-->% V2 + V6, V2 %-->% V3, V3 %-->% V4, V4 %-->% V5, V6 %-->% V3,
                                                            U1 %-->% V2 + V4, U2 %-->% V1 + V3 + V6, U3 %-->% V4 + V5))),
@@ -44,7 +44,7 @@ paper <- list(
   "IV, |Z|=3, |X|=|Y|=2"  = list("IV, $|Z|=3$, $|X|=|Y|=2$", c(12, 32, 28, 48, 3, 36, 0)),
   "IV, |Z|=4, |X|=|Y|=2"  = list("IV, $|Z|=4$, $|X|=|Y|=2$", c(16, 64, 60, 160, 4, 144, 0)),
   "IV, |Z|=|X|=|Y|=3"     = list("IV, $|Z|=|X|=|Y|=3$", c(27, 729, 333, 1395, 3, 1368, 0)),
-  "Fig 5 right"           = list("Fig.~\\ref{fig:nested-ineq} (right), $\\{V_2,V_4\\}$", c(16, 64, 40, 24, 6, 8, 0)),
+  "Fig 4 right"           = list("Fig.~\\ref{fig:nested-ineq} (right), $\\{V_2,V_4\\}$", c(16, 64, 40, 24, 6, 8, 0)),
   "X -> A <- U -> B <- Y" = list("$X \\rightarrow A \\leftarrow U \\rightarrow B \\leftarrow Y$", c(16, 16, 16, 24, 8, 8, 0)),
   "Fig 7 merged"          = list("Fig.~\\ref{fig:incomp}, merged $\\{V_2,V_4,V_5\\}$", c(32, 64, 48, 1128, 12, 1096, 6)),
   "Tripartite Bell"       = list("Tripartite Bell, Fig.~\\ref{fig:tripart}", c(64, 64, 64, 53856, 38, 53792, 0))

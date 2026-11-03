@@ -13,4 +13,4 @@ There are no conditional independence relations.
 * Equality and inequality constraints by district:
 There are 0 nontrivial constraints involving V1_V3_V2, 0 inequalities and 0 linearly independent equalities.
 
-Number of nontrivial constraints (Proposition 6): 0 
+Number of nontrivial constraints (Proposition 4): 0 

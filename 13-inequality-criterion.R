@@ -6,7 +6,7 @@
 ##       (Remark 3), with
 ##   (b) whether the district polytope has inequality constraints beyond the probability
 ##       constraints and its own equality constraints (exact polytope comparison).
-## As cross-checks, also compare (b) with Proposition 6(ii), and with whether the district
+## As cross-checks, also compare (b) with Proposition 4(ii), and with whether the district
 ## is "saturated" after adding HLP edges. The last part classifies the examples in the paper.
 source("common.R")
 
@@ -112,7 +112,7 @@ run_case <- function(k, ext_targets, internal) {
   st <- structures(pa, members, exts)
   data.frame(graph = paste(edges, collapse = "; "), instrumental = st[["instrumental"]], bell = st[["bell"]],
              saturated = saturated_after_hlp(pa, members), inequalities = has_inequalities(cn, j),
-             proposition6 = any(cn$nontrivial[[j]] & H[, 1] == 0))
+             proposition4 = any(cn$nontrivial[[j]] & H[, 1] == 0))
 }
 
 subsets <- function(k) unlist(lapply(1:k, \(s) combn(k, s, simplify = FALSE)), recursive = FALSE)
@@ -137,8 +137,8 @@ cat("\nContains a structure of Remark 3 vs. has inequality constraints:\n")
 print(table(structure = res$structure, inequalities = res$inequalities, useNA = "ifany"))
 cat("\nType of structure, among the districts with inequality constraints:\n")
 print(table(instrumental = res$instrumental[res$inequalities], bell = res$bell[res$inequalities]))
-cat("\nProposition 6(ii) vs. has inequality constraints:\n")
-print(table(proposition6 = res$proposition6, inequalities = res$inequalities, useNA = "ifany"))
+cat("\nProposition 4(ii) vs. has inequality constraints:\n")
+print(table(proposition4 = res$proposition4, inequalities = res$inequalities, useNA = "ifany"))
 cat("\nSaturated after adding HLP edges vs. has inequality constraints:\n")
 print(table(saturated = res$saturated, inequalities = res$inequalities, useNA = "ifany"))
 write.csv(res, "inequality-criterion-results.csv", row.names = FALSE)
@@ -148,8 +148,8 @@ section("Structures in the examples of Section 4.3")
 examples <- list(
   "IV"                    = dhvm(caugi(Z %-->% X, X %-->% Y, U %-->% X + Y)),
   "Sequential IV"         = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4 %-->% V5, U2 %-->% V2 + V3, U3 %-->% V4 + V5)),
-  "Fig 5 left"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V1 %-->% V4, U2 %-->% V2 + V4)),
-  "Fig 5 right"           = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 4 left"            = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V1 %-->% V4, U2 %-->% V2 + V4)),
+  "Fig 4 right"           = dhvm(caugi(V1 %-->% V2 %-->% V3 %-->% V4, V2 %-->% V4, U2 %-->% V2 + V4)),
   "X -> A <- U -> B <- Y" = dhvm(caugi(X %-->% A, Y %-->% B, U %-->% A + B)),
   "Verma graph"           = dhvm(caugi(A %-->% B %-->% C %-->% D, U %-->% B + D)),
   "Tripartite Bell"       = dhvm(caugi(X %-->% V1, Y %-->% V2, Z %-->% V3, U %-->% V1 + V2 + V3)),

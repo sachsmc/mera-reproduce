@@ -16,7 +16,7 @@ print(cn)
 counts <- sapply(names(cn$polytope$Hrep), \(j) { H <- cn$polytope$Hrep[[j]]; f <- cn$nontrivial[[j]]
   c(ineq = sum(H[, 1] == 0), nontrivial_ineq = sum(f & H[, 1] == 0),
     eq = sum(H[, 1] == 1), nontrivial_eq = sum(f & H[, 1] == 1)) })
-section("Constraint counts (Proposition 6)")
+section("Constraint counts (Proposition 4)")
 print(counts)
 
 d1 <- "V1_V3_V6"

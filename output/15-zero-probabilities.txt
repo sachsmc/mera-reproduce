@@ -6,7 +6,7 @@ package 'data.table' was built under R version 4.4.3
 IV                      0        0           48          170
 Front door              0        0           84          193
 Verma graph             0        0          256          362
-Fig 5 right             0        0          224          307
+Fig 4 right             0        0          224          307
 Bell                    0        0          208          306
 Sequential              0        0          120          332
 

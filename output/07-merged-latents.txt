@@ -20,7 +20,7 @@ The first 4 expressions are
 P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0)P(V5 = 0|V2 =  ...[truncated]
 P(V2 = 0|V1 = 0)P(V4 = 0|V2 = 0,V1 = 0,V3 = 0)P(V5 = 0|V2 =  ...[truncated]
 
-==== Constraint counts (Proposition 6) ====
+==== Constraint counts (Proposition 4) ====
                 V1_V3_V6 V2_V4_V5
 ineq                  16     1128
 nontrivial_ineq        0     1096

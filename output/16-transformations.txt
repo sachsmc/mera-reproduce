@@ -1,11 +1,11 @@
 Warning message:
 package 'data.table' was built under R version 4.4.3 
 
-==== Figure 2 ====
+==== Figure 6 ====
 c-degree of the left, center and right DAGs: 2 2 1 
-Proposition 1 adds Z -> X to the left DAG: TRUE 
-Proposition 2 applied directly to the left DAG, U1, D = {X}: FALSE TRUE 
-Proposition 2 applied to the center DAG, U1, D = {X}: TRUE TRUE 
+Proposition 5 adds Z -> X to the left DAG: TRUE 
+Proposition 6 applied directly to the left DAG, U1, D = {X}: FALSE TRUE 
+Proposition 6 applied to the center DAG, U1, D = {X}: TRUE TRUE 
 After splitting, both new unobserved vertices have a single child, which leaves the right DAG.
 Conditional independencies of the three DAGs: 0 0 0 
 
@@ -31,7 +31,7 @@ FALSE FALSE
 FALSE  TRUE 
 
 ==== Half of a Bell scenario (not in the paper), W -> A <- U -> B ====
-Proposition 1 adds B -> A: TRUE 
+Proposition 5 adds B -> A: TRUE 
 MERA constraints on the dhvm: hb 
 The model has districts (unobserved variables marked with [u]:
      {W} with c-degree 0, {A, B, U[u]} with c-degree 1 

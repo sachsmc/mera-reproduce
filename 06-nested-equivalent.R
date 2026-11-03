@@ -1,5 +1,5 @@
 ## Section 4.1: two nested Markov equivalent graphs with different inequality constraints
-## (Figure 5). Both graphs have the same conditional independence and the same, trivial,
+## (Figure 4). Both graphs have the same conditional independence and the same, trivial,
 ## equality constraints. The 8 nontrivial inequality constraints of the right graph are the
 ## instrumental inequalities for each value of V3. Distributions sampled from the left graph
 ## never violate the left graph's constraints, but do violate these 8.
